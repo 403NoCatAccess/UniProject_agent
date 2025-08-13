@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfclass.novelReader.mapper.CropParametersMapper">
+
+    <resultMap id="BaseResultMap" type="com.qfclass.novelReader.domain.CropParameters">
+        <id column="crop_id" property="cropId" jdbcType="INTEGER"/>
+        <result column="scientific_name" property="scientificName" jdbcType="VARCHAR"/>
+        <result column="common_names" property="commonNames" jdbcType="VARCHAR"/>
+        <result column="optimal_temperature" property="optimalTemperature" jdbcType="DOUBLE"/>
+        <result column="temperature_range" property="temperatureRange" jdbcType="VARCHAR"/>
+        <result column="optimal_humidity" property="optimalHumidity" jdbcType="DOUBLE"/>
+        <result column="humidity_range" property="humidityRange" jdbcType="VARCHAR"/>
+        <result column="growth_stage" property="growthStage" jdbcType="VARCHAR"/>
+        <result column="data_source" property="dataSource" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT
+        crop_id,
+        scientific_name,
+        common_names,
+        optimal_temperature,
+        temperature_range,
+        optimal_humidity,
+        humidity_range,
+        growth_stage,
+        data_source
+        FROM crop_parameters
+    </select>
+
+</mapper>

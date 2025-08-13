@@ -1,6 +1,6 @@
 "use strict";
 const common_vendor = require("./vendor.js");
-const request = {
+const api = {
   // 全局配置
   common: {
     //baseUrl: "http://localhost:8080",https://api.teastick.cn
@@ -76,4 +76,4 @@ const request = {
     return this.request(options);
   }
 };
-exports.request = request;
+exports.api = api;

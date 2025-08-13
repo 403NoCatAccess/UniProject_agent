@@ -1,1 +1,1 @@
-<view class="flex align-center justify-between p-2 my-1"><view class="font-md">{{a}}</view><view class="flex align-center"><text class="font text-light-black">{{b}}</text><my-icon wx:if="{{c}}" u-i="13dd6614-0" bind:__l="__l" u-p="{{c}}"></my-icon></view></view>
+<view class="flex align-center justify-between p-2 my-1"><view class="font-md">{{a}}</view><view class="flex align-center"><text class="font text-light-black">{{b}}</text><my-icon wx:if="{{c}}" u-i="81242ae4-0" bind:__l="__l" u-p="{{c}}"></my-icon></view></view>

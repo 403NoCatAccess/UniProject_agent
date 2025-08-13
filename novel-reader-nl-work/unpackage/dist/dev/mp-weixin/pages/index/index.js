@@ -182,7 +182,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     h: common_vendor.f($data.functionSortArr, (item, index, i0) => {
       return {
-        a: "ecdb1d8c-2-" + i0,
+        a: "2c877a98-2-" + i0,
         b: common_vendor.p({
           iconId: item.iconId,
           iconColor: item.iconColor,
@@ -197,11 +197,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     j: common_vendor.f($data.safeBookList, (item, index, i0) => {
       return {
-        a: "ecdb1d8c-4-" + i0,
+        a: "2c877a98-4-" + i0,
         b: common_vendor.p({
           title: item.category.cname
         }),
-        c: "ecdb1d8c-5-" + i0,
+        c: "2c877a98-5-" + i0,
         d: common_vendor.p({
           bookListArr: item.books
         }),

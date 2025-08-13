@@ -32,7 +32,7 @@ function createApp() {
   const app = common_vendor.createSSRApp(_sfc_main);
   app.component("my-icon", myIcon);
   app.config.globalProperties.$statusBarHeight = common_vendor.index.getSystemInfoSync().statusBarHeight;
-  app.config.globalProperties.$http = common_request.request;
+  app.config.globalProperties.$http = common_request.api;
   return {
     app
   };

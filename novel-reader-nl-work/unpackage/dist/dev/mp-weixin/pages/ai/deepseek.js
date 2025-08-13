@@ -1,17 +1,8 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
 const common_deepSeekApi = require("../../common/deepSeekApi.js");
+const common_request = require("../../common/request.js");
 const pageTitle = () => "../../components/pageTitle.js";
-const CROP_DATABASE = {
-  "番茄": { temp: 25, humidity: 60 },
-  "生菜": { temp: 18, humidity: 70 },
-  "黄瓜": { temp: 28, humidity: 65 },
-  "草莓": { temp: 22, humidity: 75 },
-  "辣椒": { temp: 30, humidity: 55 },
-  "玫瑰": { temp: 20, humidity: 65 },
-  "郁金香": { temp: 18, humidity: 60 },
-  "小麦": { temp: 15, humidity: 50 }
-};
 const _sfc_main = {
   components: {
     pageTitle
@@ -29,6 +20,11 @@ const _sfc_main = {
       // 滚动条位置
       fixedTopHeight: 0,
       // 顶部固定区域高度（动态计算）
+      cropsLoaded: false,
+      // 作物数据是否加载完成
+      // 作物数据库（从后端获取）
+      cropDatabase: {},
+      // 存储从后端获取的作物数据
       // 作物培育状态
       cropName: "",
       // 当前培育的作物名称
@@ -67,8 +63,10 @@ const _sfc_main = {
     }
   },
   mounted() {
-    this.loadChatHistory();
-    this.startTempHumiditySimulation();
+    this.loadCropsData().then(() => {
+      this.loadChatHistory();
+      this.startTempHumiditySimulation();
+    });
     this.setupKeyboardListener();
     this.$nextTick(() => {
       const query = common_vendor.index.createSelectorQuery().in(this);
@@ -85,6 +83,54 @@ const _sfc_main = {
     common_vendor.index.offKeyboardHeightChange();
   },
   methods: {
+    // 加载作物数据
+    async loadCropsData() {
+      try {
+        const response = await common_request.api.get("/api/crops");
+        console.log("原始API响应:", response);
+        this.cropDatabase = response.reduce((acc, crop) => {
+          let commonNames = [];
+          try {
+            if (crop.commonNames) {
+              commonNames = JSON.parse(crop.commonNames);
+            }
+          } catch (e) {
+            console.warn("解析commonNames失败:", crop.commonNames, e);
+            if (crop.scientificName) {
+              commonNames = [crop.scientificName];
+            }
+          }
+          if (!Array.isArray(commonNames)) {
+            commonNames = [];
+          }
+          commonNames.forEach((name) => {
+            if (name && typeof name === "string") {
+              acc[name] = {
+                // 使用正确的字段名 optimalTemperature 和 optimalHumidity
+                temp: crop.optimalTemperature,
+                humidity: crop.optimalHumidity
+              };
+            }
+          });
+          return acc;
+        }, {});
+        console.log("转换后的作物数据:", JSON.parse(JSON.stringify(this.cropDatabase)));
+        console.log("示例数据 - 番茄:", this.cropDatabase["番茄"]);
+        this.cropsLoaded = true;
+      } catch (error) {
+        console.error("加载作物数据失败:", error);
+        this.cropDatabase = {
+          "番茄": { temp: 25, humidity: 60 },
+          "生菜": { temp: 18, humidity: 70 }
+          // ...其他备份数据
+        };
+        this.cropsLoaded = true;
+        common_vendor.index.showToast({
+          title: "作物数据加载失败，使用本地备份",
+          icon: "none"
+        });
+      }
+    },
     // 设置键盘监听
     setupKeyboardListener() {
       common_vendor.index.onKeyboardHeightChange((res) => {
@@ -209,7 +255,7 @@ const _sfc_main = {
     },
     // 处理作物请求 - 调用DeepSeek API
     async processCropRequest(userMessage) {
-      const aiResponse = await common_deepSeekApi.callDeepSeekApi(userMessage, CROP_DATABASE);
+      const aiResponse = await common_deepSeekApi.callDeepSeekApi(userMessage, this.cropDatabase);
       return aiResponse;
     },
     // 执行命令
@@ -291,12 +337,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     l: `${$data.fixedTopHeight}px`,
     m: $data.loading ? "AI输入中..." : "请输入要培育的作物名称（如：番茄、生菜）",
     n: common_vendor.o((...args) => $options.sendMessage && $options.sendMessage(...args)),
-    o: $data.yourMessage,
-    p: common_vendor.o(($event) => $data.yourMessage = $event.detail.value),
-    q: common_vendor.o((...args) => $options.sendMessage && $options.sendMessage(...args)),
-    r: !$data.loading,
-    s: $data.loading,
-    t: common_vendor.p({
+    o: $data.loading || !$data.cropsLoaded,
+    p: $data.yourMessage,
+    q: common_vendor.o(($event) => $data.yourMessage = $event.detail.value),
+    r: common_vendor.o((...args) => $options.sendMessage && $options.sendMessage(...args)),
+    s: !$data.loading,
+    t: !$data.cropsLoaded,
+    v: $data.loading,
+    w: common_vendor.p({
       status: "loading"
     })
   };

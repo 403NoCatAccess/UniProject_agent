@@ -73,8 +73,9 @@
           v-model="yourMessage" 
           @confirm="sendMessage" 
           confirm-type="search"
+          :disabled="loading || !cropsLoaded"
         />
-        <button @tap="sendMessage" class="send-button" v-show="!loading">发送</button>
+        <button @tap="sendMessage" class="send-button" v-show="!loading" :disabled="!cropsLoaded">发送</button>
         <uni-load-more status="loading" v-show="loading"></uni-load-more>
       </view>
     </view>
@@ -84,18 +85,7 @@
 <script>
 import { callDeepSeekApi } from '@/common/deepSeekApi.js';
 import pageTitle from '@/components/pageTitle.vue';
-
-// 作物数据库（示例数据）
-const CROP_DATABASE = {
-  '番茄': { temp: 25, humidity: 60 },
-  '生菜': { temp: 18, humidity: 70 },
-  '黄瓜': { temp: 28, humidity: 65 },
-  '草莓': { temp: 22, humidity: 75 },
-  '辣椒': { temp: 30, humidity: 55 },
-  '玫瑰': { temp: 20, humidity: 65 },
-  '郁金香': { temp: 18, humidity: 60 },
-  '小麦': { temp: 15, humidity: 50 }
-};
+import api from '@/common/request.js'; // 导入封装的API请求模块
 
 export default {
   components: {
@@ -109,6 +99,10 @@ export default {
       loading: false, // 加载状态
       scrollTop: 0, // 滚动条位置
       fixedTopHeight: 0, // 顶部固定区域高度（动态计算）
+      cropsLoaded: false, // 作物数据是否加载完成
+      
+      // 作物数据库（从后端获取）
+      cropDatabase: {}, // 存储从后端获取的作物数据
       
       // 作物培育状态
       cropName: '', // 当前培育的作物名称
@@ -145,9 +139,12 @@ export default {
     }
   },
   mounted() {
-    this.loadChatHistory();
-    // 启动温湿度模拟
-    this.startTempHumiditySimulation();
+    // 首先加载作物数据
+    this.loadCropsData().then(() => {
+      // 作物数据加载完成后，再加载聊天记录和启动模拟
+      this.loadChatHistory();
+      this.startTempHumiditySimulation();
+    });
     
     // 监听键盘高度变化
     this.setupKeyboardListener();
@@ -171,6 +168,66 @@ export default {
     uni.offKeyboardHeightChange();
   },
   methods: {
+    // 加载作物数据
+	async loadCropsData() {
+	  try {
+		const response = await api.get('/api/crops');
+		console.log('原始API响应:', response);
+
+		this.cropDatabase = response.reduce((acc, crop) => {
+		  // 使用正确的字段名 commonNames 而不是 common_names
+		  let commonNames = [];
+		  try {
+			if (crop.commonNames) {
+			  commonNames = JSON.parse(crop.commonNames);
+			}
+		  } catch (e) {
+			console.warn('解析commonNames失败:', crop.commonNames, e);
+			// 如果解析失败，尝试使用scientificName作为备选
+			if (crop.scientificName) {
+			  commonNames = [crop.scientificName];
+			}
+		  }
+
+		  // 确保commonNames是数组
+		  if (!Array.isArray(commonNames)) {
+			commonNames = [];
+		  }
+
+		  // 为每个常见名称创建条目
+		  commonNames.forEach(name => {
+			if (name && typeof name === 'string') {
+			  acc[name] = {
+				// 使用正确的字段名 optimalTemperature 和 optimalHumidity
+				temp: crop.optimalTemperature,
+				humidity: crop.optimalHumidity
+			  };
+			}
+		  });
+
+		  return acc;
+		}, {});
+
+		console.log('转换后的作物数据:', JSON.parse(JSON.stringify(this.cropDatabase)));
+		console.log('示例数据 - 番茄:', this.cropDatabase['番茄']); // 现在应该能正确输出
+		
+		this.cropsLoaded = true;
+	  } catch (error) {
+		console.error('加载作物数据失败:', error);
+		// 使用本地备份数据
+		this.cropDatabase = {
+		  '番茄': { temp: 25, humidity: 60 },
+		  '生菜': { temp: 18, humidity: 70 },
+		  // ...其他备份数据
+		};
+		this.cropsLoaded = true;
+		uni.showToast({
+		  title: '作物数据加载失败，使用本地备份',
+		  icon: 'none'
+		});
+	  }
+	},
+    
     // 设置键盘监听
     setupKeyboardListener() {
       uni.onKeyboardHeightChange(res => {
@@ -338,7 +395,7 @@ export default {
     // 处理作物请求 - 调用DeepSeek API
     async processCropRequest(userMessage) {
       // 使用DeepSeek API处理自然语言请求
-      const aiResponse = await callDeepSeekApi(userMessage, CROP_DATABASE);
+      const aiResponse = await callDeepSeekApi(userMessage, this.cropDatabase);
       return aiResponse;
     },
     

@@ -220,7 +220,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     r: $data.setStatus,
     s: common_vendor.f($data.chapterCatalog, (item, index, i0) => {
       return {
-        a: "698f7e28-6-" + i0,
+        a: "df902124-6-" + i0,
         b: item.id
       };
     }),
