@@ -1,0 +1,2 @@
+source E:/MyProject/ESP32/led/build/gdbinit/symbols
+source E:/MyProject/ESP32/led/build/gdbinit/connect

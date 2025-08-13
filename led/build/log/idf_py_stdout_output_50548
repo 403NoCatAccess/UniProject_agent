@@ -1,0 +1,492 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D E:\MyProject\ESP32\led\build\bootloader\esp-idf\esptool_py && E:\CodeTool\esp\.espressif\python_env\idf5.2_py3.11_env\Scripts\python.exe E:/CodeTool/esp/v5.2.5/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 E:/MyProject/ESP32/led/build/bootloader/bootloader.bin"
+Bootloader binary size 0x68b0 bytes. 0x750 bytes (7%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/led.c.obj
+FAILED: esp-idf/main/CMakeFiles/__idf_main.dir/led.c.obj 
+ccache E:\CodeTool\esp\.espressif\tools\xtensa-esp-elf\esp-13.2.0_20230928\xtensa-esp-elf\bin\xtensa-esp32-elf-gcc.exe -DESP_PLATFORM -DIDF_VER=\"v5.2.5\" -DMBEDTLS_CONFIG_FILE=\"mbedtls/esp_config.h\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -DUNITY_INCLUDE_CONFIG_H -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -IE:/MyProject/ESP32/led/build/config -IE:/MyProject/ESP32/led/main -IE:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/platform_include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/config/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/config/include/freertos -IE:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/config/xtensa/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -IE:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/esp_additions/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/include/soc -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/include/soc/esp32 -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/. -IE:/CodeTool/esp/v5.2.5/esp-idf/components/heap/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/log/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/soc/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32 -IE:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/hal/platform_port/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/hal/esp32/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/hal/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/include/esp32 -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/esp32 -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_common/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/soc -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/include/private -IE:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa/esp32/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa/deprecated_include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/include/apps -IE:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/include/apps/sntp -IE:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/freertos/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/esp32xx/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/esp32xx/include/arch -IE:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/esp32xx/include/sys -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_ringbuf/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/efuse/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/efuse/esp32/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_mm/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/analog_comparator/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/dac/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/gpio/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/gptimer/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2c/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2s/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/ledc/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/mcpwm/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/parlio/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/pcnt/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/rmt/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/sdio_slave/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/sdmmc/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/sigma_delta/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/spi/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/temperature_sensor/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/touch_sensor/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/twai/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/uart/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/usb_serial_jtag/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/driver/touch_sensor/esp32/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_pm/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls/port/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls/mbedtls/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls/mbedtls/library -IE:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls/esp_crt_bundle/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls/mbedtls/3rdparty/everest/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m -IE:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls/mbedtls/3rdparty/p256-m/p256-m -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_bootloader_format/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_app_format/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/bootloader_flash/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_partition/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/app_update/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/pthread/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_timer/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/app_trace/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_event/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_phy/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_phy/esp32/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/vfs/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/port/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_coex/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/wifi_apps/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/unity/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/unity/unity/src -IE:/CodeTool/esp/v5.2.5/esp-idf/components/cmock/CMock/src -IE:/CodeTool/esp/v5.2.5/esp-idf/components/console -IE:/CodeTool/esp/v5.2.5/esp-idf/components/http_parser -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls/esp-tls-crypto -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/interface -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/esp32/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/deprecated/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_gdbstub/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/tcp_transport/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_client/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_https_ota/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_psram/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/interface -IE:/CodeTool/esp/v5.2.5/esp-idf/components/protobuf-c/protobuf-c -IE:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/include/common -IE:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/include/security -IE:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/include/transports -IE:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/include/crypto/srp6a -IE:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/proto-c -IE:/CodeTool/esp/v5.2.5/esp-idf/components/esp_local_ctrl/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/include/port/xtensa -IE:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/sdmmc/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/diskio -IE:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/src -IE:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/vfs -IE:/CodeTool/esp/v5.2.5/esp-idf/components/idf_test/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/idf_test/include/esp32 -IE:/CodeTool/esp/v5.2.5/esp-idf/components/ieee802154/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/json/cJSON -IE:/CodeTool/esp/v5.2.5/esp-idf/components/mqtt/esp-mqtt/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_sec_provider/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/perfmon/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs/include -IE:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/include -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror=all -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -Og -fno-shrink-wrap -fmacro-prefix-map=E:/MyProject/ESP32/led=. -fmacro-prefix-map=E:/CodeTool/esp/v5.2.5/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu17 -Wno-old-style-declaration -MD -MT esp-idf/main/CMakeFiles/__idf_main.dir/led.c.obj -MF esp-idf\main\CMakeFiles\__idf_main.dir\led.c.obj.d -o esp-idf/main/CMakeFiles/__idf_main.dir/led.c.obj -c E:/MyProject/ESP32/led/main/led.c
+E:/MyProject/ESP32/led/main/led.c:25:1: error: expected identifier or '(' before '/' token
+   25 | /?**?
+      | ^
+E:/MyProject/ESP32/led/main/led.c:26:4: error: stray '@' in program
+   26 |  * @brief LED
+      |    ^
+E:/MyProject/ESP32/led/main/led.c:26:14: error: stray '\277' in program
+   26 |  * @brief LED<bf><d8><d6><c6><c8><ce><ce><f1>
+      |              ^~~~
+E:/MyProject/ESP32/led/main/led.c:26:15: error: stray '\330' in program
+   26 |  * @brief LED<bf><d8><d6><c6><c8><ce><ce><f1>
+      |                  ^~~~
+E:/MyProject/ESP32/led/main/led.c:26:16: error: stray '\326' in program
+   26 |  * @brief LED<bf><d8><d6><c6><c8><ce><ce><f1>
+      |                      ^~~~
+E:/MyProject/ESP32/led/main/led.c:26:17: error: stray '\306' in program
+   26 |  * @brief LED<bf><d8><d6><c6><c8><ce><ce><f1>
+      |                          ^~~~
+E:/MyProject/ESP32/led/main/led.c:26:18: error: stray '\310' in program
+   26 |  * @brief LED<bf><d8><d6><c6><c8><ce><ce><f1>
+      |                              ^~~~
+E:/MyProject/ESP32/led/main/led.c:26:19: error: stray '\316' in program
+   26 |  * @brief LED<bf><d8><d6><c6><c8><ce><ce><f1>
+      |                                  ^~~~
+E:/MyProject/ESP32/led/main/led.c:26:20: error: stray '\316' in program
+   26 |  * @brief LED<bf><d8><d6><c6><c8><ce><ce><f1>
+      |                                      ^~~~
+E:/MyProject/ESP32/led/main/led.c:26:21: error: stray '\361' in program
+   26 |  * @brief LED<bf><d8><d6><c6><c8><ce><ce><f1>
+      |                                          ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:4: error: stray '@' in program
+   27 |  * @param param δʹã
+      |    ^
+E:/MyProject/ESP32/led/main/led.c:27:17: error: stray '\310' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:18: error: stray '\316' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:19: error: stray '\316' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:20: error: stray '\361' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:21: error: stray '\262' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:22: error: stray '\316' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:23: error: stray '\312' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:24: error: stray '\375' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:25: error: stray '\243' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:26: error: stray '\250' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:29: error: stray '\323' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:27:31: error: stray '\251' in program
+   27 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:4: error: stray '\271' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |    ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:5: error: stray '\246' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |        ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:6: error: stray '\304' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |            ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:8: error: stray '\272' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:9: error: stray '\270' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:10: error: stray '\371' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:11: error: stray '\276' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:12: error: stray '\335' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:13: error: stray '\312' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:15: error: stray '\376' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:16: error: stray '\327' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:17: error: stray '\351' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:19: error: stray '\277' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:20: error: stray '\330' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:21: error: stray '\326' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:22: error: stray '\306' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:26: error: stray '\272' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                                       ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:27: error: stray '\364' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                                           ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:28: error: stray '\316' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                                               ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:29: error: stray '\374' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                                                   ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:30: error: stray '\265' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                                                       ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:31: error: stray '\306' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                                                           ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:33: error: stray '\271' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                                                                       ^~~~
+E:/MyProject/ESP32/led/main/led.c:29:34: error: stray '\373' in program
+   29 |  * <b9><a6><c4><U+0723><ba><b8><f9><be><dd><ca><U+00BC><fe><d7><e9><U+05F4><U+032C><bf><d8><d6><c6>LED<ba><f4><ce><fc><b5><c6><U+0427><b9><fb>
+      |                                                                                                                                           ^~~~
+E:/MyProject/ESP32/led/main/led.c:66:1: error: expected identifier or '(' before '/' token
+   66 | /?**?
+      | ^
+E:/MyProject/ESP32/led/main/led.c:67:4: error: stray '@' in program
+   67 |  * @brief DHT11ʪȶȡ
+      |    ^
+E:/MyProject/ESP32/led/main/led.c:67:16: error: stray '\316' in program
+   67 |  * @brief DHT11<ce><c2><U+02AA><b6><U+0236><c1><U+0221><c8><ce><ce><f1>
+      |                ^~~~
+E:/MyProject/ESP32/led/main/led.c:67:17: error: stray '\302' in program
+   67 |  * @brief DHT11<ce><c2><U+02AA><b6><U+0236><c1><U+0221><c8><ce><ce><f1>
+      |                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:67:19: error: stray '\266' in program
+   67 |  * @brief DHT11<ce><c2><U+02AA><b6><U+0236><c1><U+0221><c8><ce><ce><f1>
+      |                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:67:21: error: stray '\301' in program
+   67 |  * @brief DHT11<ce><c2><U+02AA><b6><U+0236><c1><U+0221><c8><ce><ce><f1>
+      |                                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:67:23: error: stray '\310' in program
+   67 |  * @brief DHT11<ce><c2><U+02AA><b6><U+0236><c1><U+0221><c8><ce><ce><f1>
+      |                                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:67:24: error: stray '\316' in program
+   67 |  * @brief DHT11<ce><c2><U+02AA><b6><U+0236><c1><U+0221><c8><ce><ce><f1>
+      |                                                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:67:25: error: stray '\316' in program
+   67 |  * @brief DHT11<ce><c2><U+02AA><b6><U+0236><c1><U+0221><c8><ce><ce><f1>
+      |                                                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:67:26: error: stray '\361' in program
+   67 |  * @brief DHT11<ce><c2><U+02AA><b6><U+0236><c1><U+0221><c8><ce><ce><f1>
+      |                                                                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:4: error: stray '@' in program
+   68 |  * @param param δʹã
+      |    ^
+E:/MyProject/ESP32/led/main/led.c:68:17: error: stray '\310' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:18: error: stray '\316' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:19: error: stray '\316' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:20: error: stray '\361' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:21: error: stray '\262' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:22: error: stray '\316' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:23: error: stray '\312' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:24: error: stray '\375' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:25: error: stray '\243' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:26: error: stray '\250' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:29: error: stray '\323' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:68:31: error: stray '\251' in program
+   68 |  * @param param <c8><ce><ce><f1><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:4: error: stray '\271' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |    ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:5: error: stray '\246' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |        ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:6: error: stray '\304' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |            ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:8: error: stray '\272' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:11: error: stray '\303' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:12: error: stray '\353' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:13: error: stray '\266' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:14: error: stray '\301' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:17: error: stray '\264' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:18: error: stray '\316' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:19: error: stray '\316' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:20: error: stray '\302' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:22: error: stray '\266' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:23: error: stray '\310' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:24: error: stray '\312' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:25: error: stray '\375' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:26: error: stray '\276' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                                                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:28: error: stray '\242' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                                                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:29: error: stray '\264' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                                                                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:70:30: error: stray '\362' in program
+   70 |  * <b9><a6><c4><U+0723><ba><U+00FF>1<c3><eb><b6><c1><U+0221><U+04BB><b4><ce><ce><c2><U+02AA><b6><c8><ca><fd><be><U+0772><a2><b4><f2><U+04E1>
+      |                                                                                                                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:92:1: error: expected identifier or '(' before '/' token
+   92 | /?**?
+      | ^
+E:/MyProject/ESP32/led/main/led.c:93:4: error: stray '@' in program
+   93 |  * @brief LEDCɻص
+      |    ^
+E:/MyProject/ESP32/led/main/led.c:93:15: error: stray '\275' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |               ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:16: error: stray '\245' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                   ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:17: error: stray '\261' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                       ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:18: error: stray '\344' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                           ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:19: error: stray '\315' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                               ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:20: error: stray '\352' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                                   ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:21: error: stray '\263' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                                       ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:24: error: stray '\367' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                                                           ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:25: error: stray '\272' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                                                               ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:26: error: stray '\257' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                                                                   ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:27: error: stray '\312' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                                                                       ^~~~
+E:/MyProject/ESP32/led/main/led.c:93:28: error: stray '\375' in program
+   93 |  * @brief LEDC<bd><a5><b1><e4><cd><ea><b3><U+027B><U+0635><f7><ba><af><ca><fd>
+      |                                                                           ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:4: error: stray '@' in program
+   94 |  * @param param ص״̬Ϣ
+      |    ^
+E:/MyProject/ESP32/led/main/led.c:94:17: error: stray '\273' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:19: error: stray '\367' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:20: error: stray '\262' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:21: error: stray '\316' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:22: error: stray '\312' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:23: error: stray '\375' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:24: error: stray '\243' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:25: error: stray '\250' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:26: error: stray '\272' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                                         ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:27: error: stray '\254' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                                             ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:29: error: stray '\320' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                                                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:30: error: stray '\305' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                                                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:32: error: stray '\243' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                                                                                 ^~~~
+E:/MyProject/ESP32/led/main/led.c:94:33: error: stray '\251' in program
+   94 |  * @param param <bb><U+0635><f7><b2><ce><ca><fd><a3><a8><ba><ac><U+05F4><U+032C><d0><c5><U+03E2><a3><a9>
+      |                                                                                                     ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:4: error: stray '@' in program
+   95 |  * @param user_arg ûδʹã
+      |    ^
+E:/MyProject/ESP32/led/main/led.c:95:20: error: stray '\323' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:22: error: stray '\247' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:23: error: stray '\262' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:24: error: stray '\316' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:25: error: stray '\312' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:26: error: stray '\375' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:27: error: stray '\243' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:28: error: stray '\250' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:31: error: stray '\323' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:95:33: error: stray '\251' in program
+   95 |  * @param user_arg <d3><U+00FB><a7><b2><ce><ca><fd><a3><a8><U+03B4><U+02B9><d3><U+00E3><a9>
+      |                                                                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:4: error: stray '@' in program
+   96 |  * @return ǷѸȼ
+      |    ^
+E:/MyProject/ESP32/led/main/led.c:96:12: error: stray '\312' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |            ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:14: error: stray '\361' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:15: error: stray '\273' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:16: error: stray '\275' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:17: error: stray '\320' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:19: error: stray '\337' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:20: error: stray '\323' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:21: error: stray '\305' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:22: error: stray '\317' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:24: error: stray '\266' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:25: error: stray '\310' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                                                            ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:26: error: stray '\316' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                                                                ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:27: error: stray '\316' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                                                                    ^~~~
+E:/MyProject/ESP32/led/main/led.c:96:28: error: stray '\361' in program
+   96 |  * @return <ca><U+01F7><f1><bb><bd><d0><U+0478><df><d3><c5><cf><U+023C><b6><c8><ce><ce><f1>
+      |                                                                                        ^~~~
+E:/MyProject/ESP32/led/main/led.c:115:1: error: expected identifier or '(' before '/' token
+  115 | /?**?
+      | ^
+E:/MyProject/ESP32/led/main/led.c:116:4: error: stray '@' in program
+  116 |  * @brief Ӧó
+      |    ^
+E:/MyProject/ESP32/led/main/led.c:116:11: error: stray '\326' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |           ^~~~
+E:/MyProject/ESP32/led/main/led.c:116:12: error: stray '\367' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |               ^~~~
+E:/MyProject/ESP32/led/main/led.c:116:14: error: stray '\323' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |                           ^~~~
+E:/MyProject/ESP32/led/main/led.c:116:16: error: stray '\314' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |                                       ^~~~
+E:/MyProject/ESP32/led/main/led.c:116:17: error: stray '\320' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |                                           ^~~~
+E:/MyProject/ESP32/led/main/led.c:116:18: error: stray '\362' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |                                               ^~~~
+E:/MyProject/ESP32/led/main/led.c:116:19: error: stray '\310' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |                                                   ^~~~
+E:/MyProject/ESP32/led/main/led.c:116:20: error: stray '\353' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |                                                       ^~~~
+E:/MyProject/ESP32/led/main/led.c:116:21: error: stray '\277' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |                                                           ^~~~
+E:/MyProject/ESP32/led/main/led.c:116:22: error: stray '\332' in program
+  116 |  * @brief <d6><f7><U+04E6><d3><U+00F3><cc><d0><f2><c8><eb><bf><da>
+      |                                                               ^~~~
+E:/MyProject/ESP32/led/main/led.c:23:22: warning: 'hum' defined but not used [-Wunused-variable]
+   23 | static int temp = 0, hum = 0;  // ¶ ʪȱ
+      |                      ^~~
+E:/MyProject/ESP32/led/main/led.c:23:12: warning: 'temp' defined but not used [-Wunused-variable]
+   23 | static int temp = 0, hum = 0;  // ¶ ʪȱ
+      |            ^~~~
+E:/MyProject/ESP32/led/main/led.c:22:27: warning: 'ledc_event_handle' defined but not used [-Wunused-variable]
+   22 | static EventGroupHandle_t ledc_event_handle;
+      |                           ^~~~~~~~~~~~~~~~~
+E:/MyProject/ESP32/led/main/led.c:19:20: warning: 'TAG' defined but not used [-Wunused-variable]
+   19 | const static char *TAG = "DHT11_Demo";
+      |                    ^~~
+ninja: build stopped: subcommand failed.
