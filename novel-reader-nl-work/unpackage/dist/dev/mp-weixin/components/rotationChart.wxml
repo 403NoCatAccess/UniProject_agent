@@ -1,0 +1,1 @@
+<view class="m-2"><swiper indicator-dots="{{true}}" autoplay circular indicator-active-color="#fff" style="height:380rpx" bindchange="{{b}}"><swiper-item wx:for="{{a}}" wx:for-item="item" wx:key="c"><image src="{{item.a}}" mode="aspectFill" class="{{['w-100', 'animated', item.b]}}"></image></swiper-item></swiper></view>

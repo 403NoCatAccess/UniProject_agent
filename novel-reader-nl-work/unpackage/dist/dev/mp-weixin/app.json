@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/loading/loading",
+    "pages/index/index",
+    "pages/sort/sort",
+    "pages/collection/collection",
+    "pages/mine/mine",
+    "pages/bookDetail/bookDetail",
+    "pages/detail/readingPage",
+    "pages/searchResults/searchResults",
+    "pages/ai/deepseek",
+    "pages/music/music",
+    "pages/bluetooth/bluetooth"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "selectedColor": "#dc4d2f",
+    "backgroundColor": "#f4f7fc",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/tabbar/index.png",
+        "selectedIconPath": "/static/tabbar/indexed.png"
+      },
+      {
+        "pagePath": "pages/sort/sort",
+        "text": "分类",
+        "iconPath": "/static/tabbar/sort.png",
+        "selectedIconPath": "/static/tabbar/sorted.png"
+      },
+      {
+        "pagePath": "pages/collection/collection",
+        "text": "收藏",
+        "iconPath": "/static/tabbar/collection.png",
+        "selectedIconPath": "/static/tabbar/collectioned.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/static/tabbar/mine.png",
+        "selectedIconPath": "/static/tabbar/mined.png"
+      }
+    ]
+  },
+  "__usePrivacyCheck__": true,
+  "requiredPrivateInfos": [
+    "getLocation"
+  ],
+  "requiredBackgroundModes": [
+    "bluetooth",
+    "location"
+  ],
+  "permission": {
+    "scope.bluetooth": {
+      "desc": "用于连接您的蓝牙阅读器设备"
+    },
+    "scope.userLocation": {
+      "desc": "搜索附近的蓝牙设备需要位置信息"
+    }
+  },
+  "usingComponents": {
+    "my-icon": "/components/myIcon"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "page-title": "../../components/pageTitle",
+    "tab-top": "../../components/tabTop"
+  }
+}

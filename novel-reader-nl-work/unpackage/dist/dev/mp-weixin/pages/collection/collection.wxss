@@ -1,0 +1,49 @@
+
+/* 样式保持不变 */
+.container.data-v-cd17183b {
+  padding: 20px;
+}
+.header.data-v-cd17183b {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.collection.data-v-cd17183b {
+  margin-top: 20px;
+}
+ul.data-v-cd17183b {
+  list-style-type: none;
+  padding: 0;
+}
+li.data-v-cd17183b {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.book-cover.data-v-cd17183b {
+  width: 80rpx;
+  height: 120rpx;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+.book-info.data-v-cd17183b {
+  flex: 1;
+}
+.book-title.data-v-cd17183b {
+  font-size: 16px;
+  font-weight: bold;
+}
+.book-author.data-v-cd17183b {
+  font-size: 14px;
+  color: #666;
+}
+button.data-v-cd17183b {
+  margin-left: 10px;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}

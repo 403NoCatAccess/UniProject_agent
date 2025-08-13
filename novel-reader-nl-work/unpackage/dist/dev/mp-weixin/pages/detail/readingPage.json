@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "uni-drawer": "../../components/uni-drawer/uni-drawer",
+    "uni-load-more": "../../components/uni-load-more/uni-load-more"
+  }
+}

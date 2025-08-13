@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfclass.novelReader.mapper.ChapterContentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qfclass.novelReader.domain.ChapterContent">
+        <id column="id" property="id"/>
+        <result column="catalog_id" property="catalogId"/>
+        <result column="text" property="text"/>
+    </resultMap>
+    <select id="getChapterContentByCatalogId" resultType="com.qfclass.novelReader.vo.ChapterContentVo">
+        select a.id catalogId, b.id contentId, a.title, b.text, c.id bookId, c.name bookName
+        from chapter_catalog a,
+        chapter_content b,
+        book c
+        where a.id = #{catalogId}
+        and a.id = b.catalog_id
+        and a.book_id = c.id
+        and c.id = #{bookId}
+    </select>
+</mapper>

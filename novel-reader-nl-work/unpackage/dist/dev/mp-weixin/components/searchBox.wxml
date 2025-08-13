@@ -1,0 +1,1 @@
+<view class="flex align-center justify-center mx-2 border rounded by-light" style="height:70rpx;opacity:.8"><my-icon wx:if="{{a}}" u-i="5bec0dca-0" bind:__l="__l" u-p="{{a}}"></my-icon><input type="text" placeholder="请输入想要查找的图书名称" class="flex-1 font-sm" bindconfirm="{{b}}" confirm-type="search" value="{{c}}" bindinput="{{d}}"/></view>

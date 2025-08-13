@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "search-box": "../../components/searchBox",
+    "rotation-chart": "../../components/rotationChart",
+    "recommend": "../../components/compound/recommend",
+    "book-list": "../../components/bookList",
+    "list-header": "../../components/listHeader"
+  }
+}

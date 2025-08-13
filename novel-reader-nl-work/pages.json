@@ -1,0 +1,106 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	    {
+	      "path": "pages/loading/loading",
+	      "style": {
+	        "navigationBarTitleText": "",
+	        "navigationStyle": "custom"
+	      }
+	    },
+		{
+			"path": "pages/index/index",
+			  "style": {
+			    "enablePullDownRefresh": true // 添加这行
+			  }
+		},
+		{
+			"path": "pages/sort/sort"
+		},
+		{
+			"path": "pages/collection/collection"
+		},
+		{
+			"path": "pages/mine/mine"
+		},
+		{
+			"path": "pages/bookDetail/bookDetail"
+		},
+		{
+			"path": "pages/detail/readingPage"
+		},
+		{
+			"path": "pages/searchResults/searchResults"
+		},
+		{
+			"path": "pages/ai/deepseek"
+		},
+		{
+			"path": "pages/music/music"
+		},
+		{
+			"path" : "pages/bluetooth/bluetooth",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		}
+	],
+	/*
+  "subPackages": [
+    {
+      "root": "static",
+      "pages": [] // 仅保留在分包"pages/placeholder/index"
+    }
+  ],*/
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
+		// "app-plus": {
+		// 	"titleNView": false
+		// }
+	},
+	// "globalStyle": {
+	// 	"navigationBarTextStyle": "black",
+	// 	"navigationBarBackgroundColor": "#F8F8F8",
+	// 	"backgroundColor": "#F8F8F8",
+
+	// },
+	"uniIdRouter": {},
+	"tabBar": {
+		"selectedColor": "#dc4d2f",
+		"fontSize": "12px",
+		"backgroundColor": "#f4f7fc",
+		"borderStyle": "white",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "/static/tabbar/index.png",
+				"selectedIconPath": "/static/tabbar/indexed.png"
+			},
+			{
+				"pagePath": "pages/sort/sort",
+				"text": "分类",
+				"iconPath": "/static/tabbar/sort.png",
+				"selectedIconPath": "/static/tabbar/sorted.png"
+			},
+			{
+				"pagePath": "pages/collection/collection",
+				"text": "收藏",
+				"iconPath": "/static/tabbar/collection.png",
+				"selectedIconPath": "/static/tabbar/collectioned.png"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"text": "我的",
+				"iconPath": "/static/tabbar/mine.png",
+				"selectedIconPath": "/static/tabbar/mined.png"
+			}
+		]
+	}
+	
+}

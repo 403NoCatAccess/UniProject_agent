@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "page-title": "../../components/pageTitle",
+    "uni-load-more": "../../components/uni-load-more/uni-load-more"
+  }
+}

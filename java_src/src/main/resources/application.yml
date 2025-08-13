@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/novel-reader?useUnicode=true&characterEncoding=utf8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    username: novel-reader # root # novel-reader
+    password: eMffSCb63yjpz8G2 # 123456 # eMffSCb63yjpz8G2
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml  # 核心配置：XML扫描路径
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

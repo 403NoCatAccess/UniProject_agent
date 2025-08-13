@@ -1,0 +1,19 @@
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+}
+.error-box {
+  padding: 20rpx;
+  background-color: #ffeeee;
+  border-radius: 8rpx;
+  margin: 20rpx;
+  text-align: center;
+}
+.error-box button {
+  margin-top: 20rpx;
+  background-color: #e64340;
+  color: white;
+}
