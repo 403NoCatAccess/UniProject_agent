@@ -87,6 +87,9 @@ static uint8_t temp_value[2] = {0x00,0x16};
 static uint8_t humidity_value[2] = {0x00,0x25};
 //led的值
 static uint8_t  led_value[1] = {0};
+// 全局命令缓冲区
+uint8_t command_buffer[32];
+size_t command_length = 0;
 
 
 //att的handle表
@@ -293,10 +296,13 @@ static void gatts_profile_event_handler(esp_gatts_cb_event_t event, esp_gatt_if_
                 }
                 else if(param->write.handle == netcfg_handle_table[SV1_CH3_IDX_CHAR_VAL])   //LED值
                 {
-                    led_value[0] = param->write.value[0];
+                    // led_value[0] = param->write.value[0];
                     //改写LED的值
-                    ESP_LOGI(TAG,"led value:%d",led_value[0]);
-                    gpio_set_level(GPIO_NUM_27,led_value[0]?1:0);
+                    // 保存完整命令
+                    command_length = param->write.len;
+                    memcpy(command_buffer, param->write.value, command_length);
+                    
+                    ESP_LOGI(TAG, "收到命令数据: %.*s", command_length, command_buffer);
                     
                 }
 

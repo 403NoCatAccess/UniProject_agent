@@ -21,8 +21,8 @@
     </view>
     
     <view class="control-panel">
-      <button @tap="initBlue" :disabled="scanning">初始化蓝牙</button><!-- 正在扫描时禁用 -->
-      <button @tap="startScan" :disabled="!bluetoothInitialized || scanning">搜索设备</button><!-- 未初始化或正在扫描时禁用 -->
+      <button @tap="initBlue" :disabled="scanning">初始化蓝牙</button>
+      <button @tap="startScan" :disabled="!bluetoothInitialized || scanning">搜索设备</button>
       <button @tap="stopScan" :disabled="!scanning">停止搜索</button>
       <button @tap="disconnectDevice" :disabled="!connectedDevice">断开连接</button>
     </view>
@@ -87,6 +87,8 @@ const ENVIRONMENTAL_SENSING_SERVICE = '0000181A-0000-1000-8000-00805F9B34FB';
 // 标准特征UUID (Temperature & Humidity)
 const TEMPERATURE_CHARACTERISTIC = '00002A6E-0000-1000-8000-00805F9B34FB';
 const HUMIDITY_CHARACTERISTIC = '00002A6F-0000-1000-8000-00805F9B34FB';
+// LED控制特征UUID (自定义)
+const LED_CONTROL_CHARACTERISTIC = '00002A57-0000-1000-8000-00805F9B34FB';
 
 export default {
   components: {
@@ -105,6 +107,7 @@ export default {
       serviceId: '',
       characteristicId: '',
       deviceId: '',
+      ledCharacteristicId: '', // 添加LED特征ID
       
       // 传感器数据
       sensorData: {
@@ -117,7 +120,134 @@ export default {
       receivedData: [],
     };
   },
+  mounted() {
+    // 监听来自deepseek.vue的命令
+    uni.$on('ble-command', this.handleBleCommand);
+    
+    // 尝试恢复蓝牙状态
+    this.restoreBluetoothState();
+  },
+  onUnload() {
+    // 保存蓝牙状态
+    this.saveBluetoothState();
+    
+    // 移除事件监听
+    uni.$off('ble-command', this.handleBleCommand);
+    uni.offBluetoothAdapterStateChange();
+    uni.offBluetoothDeviceFound();
+    uni.offBLECharacteristicValueChange();
+  },
   methods: {
+    // 恢复蓝牙状态
+    restoreBluetoothState() {
+      // 尝试从本地存储恢复状态
+      const savedState = uni.getStorageSync('bluetoothState');
+      if (savedState) {
+        this.connectedDevice = savedState.connectedDevice;
+        this.deviceId = savedState.deviceId;
+        this.serviceId = savedState.serviceId;
+        this.ledCharacteristicId = savedState.ledCharacteristicId;
+        this.sensorData = savedState.sensorData;
+        
+        if (this.connectedDevice) {
+          this.statusMessage = `已连接: ${this.connectedDevice.name || '未知设备'}`;
+          
+          // 通知其他组件蓝牙已连接
+          uni.$emit('bluetooth-status', { connected: true });
+          return;
+        }
+      }
+      
+      // 检查蓝牙适配器状态
+      uni.getBluetoothAdapterState({
+        success: (res) => {
+          if (res.available) {
+            this.bluetoothInitialized = true;
+            this.statusMessage = '蓝牙已就绪';
+            
+            // 检查是否有已连接的设备
+            uni.getConnectedBluetoothDevices({
+              success: (res) => {
+                if (res.devices.length > 0) {
+                  const device = res.devices[0];
+                  this.connectedDevice = device;
+                  this.deviceId = device.deviceId;
+                  this.statusMessage = `已连接: ${device.name || '未知设备'}`;
+                  
+                  // 重新获取服务
+                  this.getBLEDeviceServices(device.deviceId);
+                  
+                  // 通知其他组件蓝牙已连接
+                  uni.$emit('bluetooth-status', { connected: true });
+                }
+              },
+              fail: (error) => {
+                console.error('获取已连接设备失败:', error);
+              }
+            });
+          }
+        },
+        fail: (error) => {
+          console.error('获取蓝牙适配器状态失败:', error);
+        }
+      });
+    },
+    
+    // 保存蓝牙状态
+    saveBluetoothState() {
+      uni.setStorageSync('bluetoothState', {
+        connectedDevice: this.connectedDevice,
+        deviceId: this.deviceId,
+        serviceId: this.serviceId,
+        ledCharacteristicId: this.ledCharacteristicId,
+        sensorData: this.sensorData
+      });
+    },
+    
+    // 处理来自deepseek.vue的命令
+    handleBleCommand(command) {
+      if (!this.connectedDevice) {
+        uni.showToast({
+          title: '蓝牙未连接，无法发送命令',
+          icon: 'none'
+        });
+        return;
+      }
+      
+      switch (command.type) {
+        case 'set_target':
+          this.sendSetTargetCommand(command.temp, command.humidity);
+          break;
+        case 'start':
+          this.sendControlCommand('start');
+          break;
+        case 'stop':
+          this.sendControlCommand('stop');
+          break;
+        default:
+          console.warn('未知命令类型:', command.type);
+      }
+    },
+    
+    // 发送设置目标温湿度命令
+    sendSetTargetCommand(temp, humidity) {
+      // 命令格式: "set_target:25.5,60.0"
+      const command = `set_target:${temp.toFixed(1)},${humidity.toFixed(1)}`;
+      this.sendCommand(command);
+      
+      // 添加到日志
+      this.addLog(`发送设置命令: ${command}`);
+    },
+    
+    // 发送控制命令（启动/停止）
+    sendControlCommand(cmdType) {
+      // 命令格式: "start" 或 "stop"
+      this.sendCommand(cmdType);
+      
+      // 添加到日志
+      this.addLog(`发送控制命令: ${cmdType}`);
+    },
+    
     // 格式化温度显示
     formatTemperature(value) {
       // 转换为实际温度值（整数部分除以10，小数部分取模10）
@@ -166,6 +296,12 @@ export default {
               this.connectedDevice = null;
               this.devices = [];
               this.receivedData = [];
+              
+              // 通知其他组件蓝牙断开
+              uni.$emit('bluetooth-status', { connected: false });
+              
+              // 清除保存的状态
+              uni.removeStorageSync('bluetoothState');
             }
           });
         },
@@ -203,7 +339,7 @@ export default {
       // 开始搜索设备
       uni.startBluetoothDevicesDiscovery({
         allowDuplicatesKey: false,
-        services: [ENVIRONMENTAL_SENSING_SERVICE], // 只搜索环境传感服务  删除这个参数表示全部  数组多个元素可查找多个服务  //建议写上 防止持续显示连接中
+        services: [ENVIRONMENTAL_SENSING_SERVICE],
         success: (res) => {
           console.log('开始搜索蓝牙设备', res);
           uni.hideLoading();
@@ -274,6 +410,9 @@ export default {
           
           // 获取设备服务
           this.getBLEDeviceServices(device.deviceId);
+          
+          // 保存状态
+          this.saveBluetoothState();
         },
         fail: (err) => {
           console.error('设备连接失败', err);
@@ -335,6 +474,8 @@ export default {
             c.uuid.toLowerCase() === TEMPERATURE_CHARACTERISTIC.toLowerCase());
           const humidityChar = res.characteristics.find(c => 
             c.uuid.toLowerCase() === HUMIDITY_CHARACTERISTIC.toLowerCase());
+          const ledChar = res.characteristics.find(c => 
+            c.uuid.toLowerCase() === LED_CONTROL_CHARACTERISTIC.toLowerCase());
           
           // 启用特征值变化监听
           if (tempChar) {
@@ -342,6 +483,11 @@ export default {
           }
           if (humidityChar) {
             this.enableBLECharacteristicValueChange(deviceId, serviceId, humidityChar.uuid);
+          }
+          
+          // 保存LED控制特征ID
+          if (ledChar) {
+            this.ledCharacteristicId = ledChar.uuid;
           }
         },
         fail: (err) => {
@@ -359,7 +505,7 @@ export default {
     
     // 启用特征值变化监听
     enableBLECharacteristicValueChange(deviceId, serviceId, characteristicId) {
-      uni.notifyBLECharacteristicValueChange({//启用通知功能
+      uni.notifyBLECharacteristicValueChange({
         deviceId,
         serviceId,
         characteristicId,
@@ -368,7 +514,7 @@ export default {
           console.log('启用特征值变化监听成功');
           
           // 监听特征值变化
-          uni.onBLECharacteristicValueChange((res) => {//监听数据
+          uni.onBLECharacteristicValueChange((res) => {
             console.log('特征值变化', res);
             // 处理接收到的数据
             this.handleReceivedData(res.value, res.characteristicId);
@@ -381,6 +527,12 @@ export default {
             title: '连接成功',
             icon: 'success'
           });
+          
+          // 通知其他组件蓝牙已连接
+          uni.$emit('bluetooth-status', { connected: true });
+          
+          // 保存状态
+          this.saveBluetoothState();
         },
         fail: (err) => {
           console.error('启用特征值监听失败', err);
@@ -394,7 +546,7 @@ export default {
       });
     },
     
-    // 处理接收到的数据 - 修复数据解析
+    // 处理接收到的数据
     handleReceivedData(buffer, characteristicId) {
       try {
         // 确保buffer是ArrayBuffer类型
@@ -407,12 +559,15 @@ export default {
         let rawValue = null;
         
         // 根据特征ID处理数据
-        if (characteristicId.toLowerCase() === TEMPERATURE_CHARACTERISTIC.toLowerCase()) {//转化为小写比较特征值
+        if (characteristicId.toLowerCase() === TEMPERATURE_CHARACTERISTIC.toLowerCase()) {
           // 温度特征 (整数，单位0.1°C)
-          const view = new DataView(buffer);//创建二进制数据视图
-          rawValue = view.getInt16(0, true); // 小端序  从0开始读取，按小端序解析2字节有符号整数
+          const view = new DataView(buffer);
+          rawValue = view.getInt16(0, true); // 小端序
           this.sensorData.temp = rawValue;
           content = `温度: ${this.formatTemperature(rawValue)}`;
+          
+          // 通知其他组件温度更新
+          uni.$emit('sensor-data', { temp: rawValue / 10.0 }); // 转换为实际温度值
         } 
         else if (characteristicId.toLowerCase() === HUMIDITY_CHARACTERISTIC.toLowerCase()) {
           // 湿度特征 (整数，单位%)
@@ -420,6 +575,9 @@ export default {
           rawValue = view.getUint16(0, true); // 小端序
           this.sensorData.humidity = rawValue;
           content = `湿度: ${this.formatHumidity(rawValue)}`;
+          
+          // 通知其他组件湿度更新
+          uni.$emit('sensor-data', { humidity: rawValue });
         } else {
           // 其他特征值，转换为字符串
           content = this.arrayBufferToString(buffer);
@@ -429,22 +587,67 @@ export default {
         this.lastUpdateTime = this.formatTime(new Date());
         
         // 添加到接收数据列表
-        this.receivedData.unshift({
-          time: new Date(),
-          content,
-          type: 'sensor'
-        });
+        this.addLog(content);
         
-        // 限制最多保存100条数据
-        if (this.receivedData.length > 100) {
-          this.receivedData.pop();
-        }
-        
-        console.log('接收到数据:', content);
+        // 保存状态
+        this.saveBluetoothState();
       } catch (error) {
         console.error('数据处理错误:', error);
       }
     },
+    
+    // 添加日志
+    addLog(content) {
+      this.receivedData.unshift({
+        time: new Date(),
+        content,
+        type: 'sensor'
+      });
+      
+      // 限制最多保存100条数据
+      if (this.receivedData.length > 100) {
+        this.receivedData.pop();
+      }
+    },
+    
+
+// 修改 sendCommand 方法
+sendCommand(command) {
+  if (!this.deviceId || !this.serviceId || !this.ledCharacteristicId) {
+    console.error('未连接设备或缺少特征值，无法发送命令');
+    return;
+  }
+  
+  // 将命令转换为ArrayBuffer（小程序兼容方式）
+  const commandData = this.stringToArrayBuffer(command);
+  
+  uni.writeBLECharacteristicValue({
+    deviceId: this.deviceId,
+    serviceId: this.serviceId,
+    characteristicId: this.ledCharacteristicId,
+    value: commandData,
+    success: () => {
+      console.log('命令发送成功:', command);
+    },
+    fail: (err) => {
+      console.error('命令发送失败:', err);
+      uni.showToast({
+        title: '命令发送失败',
+        icon: 'none'
+      });
+    }
+  });
+},
+
+// 添加字符串转ArrayBuffer的方法（小程序兼容）
+stringToArrayBuffer(str) {
+  const buf = new ArrayBuffer(str.length);
+  const bufView = new Uint8Array(buf);
+  for (let i = 0; i < str.length; i++) {
+    bufView[i] = str.charCodeAt(i);
+  }
+  return buf;
+},
     
     // 断开设备连接
     disconnectDevice() {
@@ -467,6 +670,12 @@ export default {
             humidity: null
           };
           uni.hideLoading();
+          
+          // 通知其他组件蓝牙断开
+          uni.$emit('bluetooth-status', { connected: false });
+          
+          // 清除保存的状态
+          uni.removeStorageSync('bluetoothState');
         },
         fail: (err) => {
           console.error('断开连接失败', err);
@@ -486,13 +695,13 @@ export default {
     
     // 格式化时间 (HH:mm:ss)
     formatTime(date) {
-      const hours = date.getHours().toString().padStart(2, '0');//链式调用，返回小时再转换成字符串，再补0
+      const hours = date.getHours().toString().padStart(2, '0');
       const minutes = date.getMinutes().toString().padStart(2, '0');
       const seconds = date.getSeconds().toString().padStart(2, '0');
       return `${hours}:${minutes}:${seconds}`;
     },
     
-    // ArrayBuffer转字符串（用于处理接收到的数据）
+    // ArrayBuffer转字符串
     arrayBufferToString(buffer) {
       const bytes = new Uint8Array(buffer);
       let str = '';

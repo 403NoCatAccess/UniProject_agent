@@ -22,4 +22,4 @@ set confirm off
 set confirm on
 
 # Load application symbols
-file E:/MyProject/ESP32/led/build/bootloader/bootloader.elf
+file E:/MyProject/UniProject_agent/led/build/bootloader/bootloader.elf

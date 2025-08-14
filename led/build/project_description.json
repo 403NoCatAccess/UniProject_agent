@@ -1,13 +1,13 @@
 {
     "version":            "1.2",
     "project_name":       "led",
-    "project_version":    "1",
-    "project_path":       "E:/MyProject/ESP32/led",
+    "project_version":    "928773a-dirty",
+    "project_path":       "E:/MyProject/UniProject_agent/led",
     "idf_path":           "E:/CodeTool/esp/v5.2.5/esp-idf",
-    "build_dir":          "E:/MyProject/ESP32/led/build",
-    "config_file":        "E:/MyProject/ESP32/led/sdkconfig",
+    "build_dir":          "E:/MyProject/UniProject_agent/led/build",
+    "config_file":        "E:/MyProject/UniProject_agent/led/sdkconfig",
     "config_defaults":    "",
-    "bootloader_elf":     "E:/MyProject/ESP32/led/build/bootloader/bootloader.elf",
+    "bootloader_elf":     "E:/MyProject/UniProject_agent/led/build/bootloader/bootloader.elf",
     "app_elf":            "led.elf",
     "app_bin":            "led.bin",
     "build_type":         "flash_app",
@@ -26,7 +26,7 @@
     },
     "common_component_reqs": [ "cxx", "newlib", "freertos", "esp_hw_support", "heap", "log", "soc", "hal", "esp_rom", "esp_common", "esp_system", "xtensa" ],
     "build_components" : [ "app_trace", "app_update", "bootloader", "bootloader_support", "bt", "cmock", "console", "cxx", "driver", "efuse", "esp-tls", "esp_adc", "esp_app_format", "esp_bootloader_format", "esp_coex", "esp_common", "esp_eth", "esp_event", "esp_gdbstub", "esp_hid", "esp_http_client", "esp_http_server", "esp_https_ota", "esp_https_server", "esp_hw_support", "esp_lcd", "esp_local_ctrl", "esp_mm", "esp_netif", "esp_netif_stack", "esp_partition", "esp_phy", "esp_pm", "esp_psram", "esp_ringbuf", "esp_rom", "esp_system", "esp_timer", "esp_wifi", "espcoredump", "esptool_py", "fatfs", "freertos", "hal", "heap", "http_parser", "idf_test", "ieee802154", "json", "log", "lwip", "main", "mbedtls", "mqtt", "newlib", "nvs_flash", "nvs_sec_provider", "openthread", "partition_table", "perfmon", "protobuf-c", "protocomm", "pthread", "sdmmc", "soc", "spi_flash", "spiffs", "tcp_transport", "ulp", "unity", "usb", "vfs", "wear_levelling", "wifi_provisioning", "wpa_supplicant", "xtensa", "" ],
-    "build_component_paths" : [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_trace", "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_update", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt", "E:/CodeTool/esp/v5.2.5/esp-idf/components/cmock", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console", "E:/CodeTool/esp/v5.2.5/esp-idf/components/cxx", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver", "E:/CodeTool/esp/v5.2.5/esp-idf/components/efuse", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_app_format", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_bootloader_format", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_coex", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_common", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_event", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_gdbstub", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_client", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_https_ota", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_https_server", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_local_ctrl", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_mm", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif_stack", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_partition", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_phy", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_pm", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_psram", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_ringbuf", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_timer", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi", "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esptool_py", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal", "E:/CodeTool/esp/v5.2.5/esp-idf/components/heap", "E:/CodeTool/esp/v5.2.5/esp-idf/components/http_parser", "E:/CodeTool/esp/v5.2.5/esp-idf/components/idf_test", "E:/CodeTool/esp/v5.2.5/esp-idf/components/ieee802154", "E:/CodeTool/esp/v5.2.5/esp-idf/components/json", "E:/CodeTool/esp/v5.2.5/esp-idf/components/log", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip", "E:/MyProject/ESP32/led/main", "E:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls", "E:/CodeTool/esp/v5.2.5/esp-idf/components/mqtt", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_sec_provider", "E:/CodeTool/esp/v5.2.5/esp-idf/components/openthread", "E:/CodeTool/esp/v5.2.5/esp-idf/components/partition_table", "E:/CodeTool/esp/v5.2.5/esp-idf/components/perfmon", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protobuf-c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm", "E:/CodeTool/esp/v5.2.5/esp-idf/components/pthread", "E:/CodeTool/esp/v5.2.5/esp-idf/components/sdmmc", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs", "E:/CodeTool/esp/v5.2.5/esp-idf/components/tcp_transport", "E:/CodeTool/esp/v5.2.5/esp-idf/components/ulp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/unity", "E:/CodeTool/esp/v5.2.5/esp-idf/components/usb", "E:/CodeTool/esp/v5.2.5/esp-idf/components/vfs", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant", "E:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa", "" ],
+    "build_component_paths" : [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_trace", "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_update", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt", "E:/CodeTool/esp/v5.2.5/esp-idf/components/cmock", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console", "E:/CodeTool/esp/v5.2.5/esp-idf/components/cxx", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver", "E:/CodeTool/esp/v5.2.5/esp-idf/components/efuse", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_app_format", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_bootloader_format", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_coex", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_common", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_event", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_gdbstub", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_client", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_https_ota", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_https_server", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_local_ctrl", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_mm", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif_stack", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_partition", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_phy", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_pm", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_psram", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_ringbuf", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_timer", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi", "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esptool_py", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal", "E:/CodeTool/esp/v5.2.5/esp-idf/components/heap", "E:/CodeTool/esp/v5.2.5/esp-idf/components/http_parser", "E:/CodeTool/esp/v5.2.5/esp-idf/components/idf_test", "E:/CodeTool/esp/v5.2.5/esp-idf/components/ieee802154", "E:/CodeTool/esp/v5.2.5/esp-idf/components/json", "E:/CodeTool/esp/v5.2.5/esp-idf/components/log", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip", "E:/MyProject/UniProject_agent/led/main", "E:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls", "E:/CodeTool/esp/v5.2.5/esp-idf/components/mqtt", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_sec_provider", "E:/CodeTool/esp/v5.2.5/esp-idf/components/openthread", "E:/CodeTool/esp/v5.2.5/esp-idf/components/partition_table", "E:/CodeTool/esp/v5.2.5/esp-idf/components/perfmon", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protobuf-c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm", "E:/CodeTool/esp/v5.2.5/esp-idf/components/pthread", "E:/CodeTool/esp/v5.2.5/esp-idf/components/sdmmc", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs", "E:/CodeTool/esp/v5.2.5/esp-idf/components/tcp_transport", "E:/CodeTool/esp/v5.2.5/esp-idf/components/ulp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/unity", "E:/CodeTool/esp/v5.2.5/esp-idf/components/usb", "E:/CodeTool/esp/v5.2.5/esp-idf/components/vfs", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant", "E:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa", "" ],
     "build_component_info" : {
         "app_trace": {
             "alias": "idf::app_trace",
@@ -39,7 +39,7 @@
             "priv_reqs": [ "soc", "driver" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/app_trace/libapp_trace.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/app_trace/libapp_trace.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_trace/app_trace.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_trace/app_trace_util.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_trace/host_file_io.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_trace/port/port_uart.c" ],
             "include_dirs": [ "include" ]
         },
@@ -54,7 +54,7 @@
             "priv_reqs": [ "esptool_py", "efuse", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/app_update/libapp_update.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/app_update/libapp_update.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_update/esp_ota_ops.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/app_update/esp_ota_app_desc.c" ],
             "include_dirs": [ "include" ]
         },
@@ -84,7 +84,7 @@
             "priv_reqs": [ "spi_flash", "mbedtls", "efuse", "heap", "esp_bootloader_format", "esp_app_format" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/bootloader_support/libbootloader_support.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/bootloader_support/libbootloader_support.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/bootloader_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/bootloader_common_loader.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/bootloader_clock_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/bootloader_mem.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/bootloader_random.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/bootloader_efuse.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/flash_encrypt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/secure_boot.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/bootloader_random_esp32.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/bootloader_flash/src/flash_qio_mode.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/bootloader_flash/src/bootloader_flash_config_esp32.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/bootloader_utility.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/flash_partitions.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/esp_image_format.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader_support/src/idf/bootloader_sha.c" ],
             "include_dirs": [ "include", "bootloader_flash/include" ]
         },
@@ -99,7 +99,7 @@
             "priv_reqs": [ "nvs_flash", "soc", "esp_pm", "esp_phy", "esp_coex", "mbedtls", "driver", "vfs" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/bt/libbt.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/bt/libbt.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/controller/esp32/bt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/controller/esp32/hli_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/controller/esp32/hli_vectors.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/btc/core/btc_alarm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/api/esp_blufi_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/hci_log/bt_hci_log.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/btc/core/btc_manage.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/btc/core/btc_task.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/btc/profile/esp/blufi/blufi_prf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/btc/profile/esp/blufi/blufi_protocol.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/alarm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/allocator.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/buffer.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/config.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/fixed_queue.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/pkt_queue.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/fixed_pkt_queue.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/future.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/hash_functions.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/hash_map.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/list.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/mutex.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/thread.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/osi.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/osi/semaphore.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/mem/bt_osi_mem.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_a2dp_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_avrc_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_bluedroid_hci.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_bt_device.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_bt_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_gap_ble_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_gap_bt_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_gatt_common_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_gattc_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_gatts_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_hidd_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_hidh_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_hf_ag_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_hf_client_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_spp_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_sdp_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/api/esp_l2cap_bt_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/ar/bta_ar.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/av/bta_av_aact.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/av/bta_av_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/av/bta_av_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/av/bta_av_cfg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/av/bta_av_ci.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/av/bta_av_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/av/bta_av_sbc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/av/bta_av_ssm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/dm/bta_dm_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/dm/bta_dm_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/dm/bta_dm_cfg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/dm/bta_dm_ci.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/dm/bta_dm_co.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/dm/bta_dm_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/dm/bta_dm_pm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/dm/bta_dm_sco.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/dm/bta_dm_qos.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gatt_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gattc_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gattc_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gattc_cache.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gattc_ci.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gattc_co.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gattc_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gattc_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gatts_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gatts_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gatts_co.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gatts_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/gatt/bta_gatts_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hd/bta_hd_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hd/bta_hd_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hd/bta_hd_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hh/bta_hh_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hh/bta_hh_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hh/bta_hh_cfg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hh/bta_hh_le.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hh/bta_hh_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hh/bta_hh_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/jv/bta_jv_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/jv/bta_jv_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/jv/bta_jv_cfg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/jv/bta_jv_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_ag/bta_ag_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_ag/bta_ag_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_ag/bta_ag_at.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_ag/bta_ag_cfg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_ag/bta_ag_cmd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_ag/bta_ag_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_ag/bta_ag_rfc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_ag/bta_ag_sco.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_ag/bta_ag_sdp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_at.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_cmd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_rfc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_sco.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/hf_client/bta_hf_client_sdp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/sdp/bta_sdp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/sdp/bta_sdp_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/sdp/bta_sdp_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/sdp/bta_sdp_cfg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/sys/bta_sys_conn.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/sys/bta_sys_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/bta/sys/utl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_ble_storage.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_config.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_dev.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_dm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_profile_queue.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_sec.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_sm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_storage.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/core/btc_util.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/a2dp/bta_av_co.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_control.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_sink.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_a2dp_source.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/a2dp/btc_av.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/avrc/btc_avrc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/avrc/bta_avrc_co.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/hf_ag/bta_ag_co.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/hf_ag/btc_hf_ag.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/hf_client/btc_hf_client.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/hf_client/bta_hf_client_co.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/hid/btc_hd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/hid/btc_hh.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/hid/bta_hh_co.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/gap/btc_gap_ble.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/gap/btc_gap_bt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/gap/bta_gap_bt_co.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatt_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatt_util.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gattc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/gatt/btc_gatts.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/spp/btc_spp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/sdp/btc_sdp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/btc/profile/std/l2cap/btc_l2cap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/device/bdaddr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/device/controller.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/device/interop.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/alloc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/bitalloc-sbc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/bitalloc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/bitstream-decode.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-oina.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-private.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/decoder-sbc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/dequant.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/framing-sbc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/framing.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/oi_codec_version.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-8-generated.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-dct8.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/decoder/srce/synthesis-sbc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_analysis.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_dct.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_dct_coeffs.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_mono.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_bit_alloc_ste.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_enc_coeffs.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_encoder.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/encoder/srce/sbc_packing.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/external/sbc/plc/sbc_plc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/hci/hci_audio.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/hci/hci_hal_h4.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/hci/hci_layer.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/hci/hci_packet_factory.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/hci/hci_packet_parser.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/hci/packet_fragmenter.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/main/bte_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/main/bte_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/a2dp/a2d_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/a2dp/a2d_sbc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avct/avct_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avct/avct_ccb.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avct/avct_l2c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avct/avct_lcb.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avct/avct_lcb_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avdt/avdt_ad.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avdt/avdt_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avdt/avdt_ccb.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avdt/avdt_ccb_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avdt/avdt_l2c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avdt/avdt_msg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avdt/avdt_scb.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avdt/avdt_scb_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avrc/avrc_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avrc/avrc_bld_ct.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avrc/avrc_bld_tg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avrc/avrc_opt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avrc/avrc_pars_ct.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avrc/avrc_pars_tg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avrc/avrc_sdp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/avrc/avrc_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/hid/hidd_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/hid/hidd_conn.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/hid/hidh_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/hid/hidh_conn.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_acl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_addr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_adv_filter.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_batchscan.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_bgconn.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_cont_energy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_gap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_5_gap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_multi_adv.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_ble_privacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_dev.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_devctl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_inq.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_pm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_sco.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btm/btm_sec.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btu/btu_hcif.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btu/btu_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/btu/btu_task.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gap/gap_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gap/gap_ble.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gap/gap_conn.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gap/gap_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/att_protocol.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_attr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_auth.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_cl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_db.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_sr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_sr_hash.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/gatt/gatt_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/hcic/hciblecmds.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/hcic/hcicmds.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_ble.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_csm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_fcr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_link.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_ucd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2c_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/l2cap/l2cap_client.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/rfcomm/port_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/rfcomm/port_rfc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/rfcomm/port_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/rfcomm/rfc_l2cap_if.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/rfcomm/rfc_mx_fsm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/rfcomm/rfc_port_fsm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/rfcomm/rfc_port_if.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/rfcomm/rfc_ts_frames.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/rfcomm/rfc_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/sdp/sdp_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/sdp/sdp_db.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/sdp/sdp_discovery.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/sdp/sdp_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/sdp/sdp_server.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/sdp/sdp_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/aes.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/p_256_curvepara.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/p_256_ecc_pp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/p_256_multprecision.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/smp_act.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/smp_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/smp_br_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/smp_cmac.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/smp_keys.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/smp_l2c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/smp_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/stack/smp/smp_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/host/bluedroid/config/stack_config.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/common/btc/profile/esp/blufi/bluedroid_host/esp_blufi.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/sha256.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/ecc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/ctr_prng.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/ctr_mode.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/aes_decrypt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/aes_encrypt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/ccm_mode.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/ecc_dsa.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/cmac_mode.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/ecc_dh.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/hmac_prng.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/ecc_platform_specific.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/hmac.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/bt/porting/ext/tinycrypt/src/cbc_mode.c" ],
             "include_dirs": [ "include/esp32/include", "common/osi/include", "common/api/include/api", "common/btc/profile/esp/blufi/include", "common/btc/profile/esp/include", "common/hci_log/include", "host/bluedroid/api/include/api", "porting/ext/tinycrypt/include" ]
         },
@@ -114,7 +114,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/cmock/libcmock.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/cmock/libcmock.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/cmock/CMock/src/cmock.c" ],
             "include_dirs": [ "CMock/src" ]
         },
@@ -129,7 +129,7 @@
             "priv_reqs": [ "driver" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/console/libconsole.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/console/libconsole.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/commands.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/esp_console_repl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/split_argv.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/linenoise/linenoise.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_cmd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_date.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_dbl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_dstr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_end.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_file.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_hashtable.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_int.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_lit.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_rem.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_rex.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_str.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/arg_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/console/argtable3/argtable3.c" ],
             "include_dirs": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/console" ]
         },
@@ -144,7 +144,7 @@
             "priv_reqs": [ "pthread" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/cxx/libcxx.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/cxx/libcxx.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/cxx/cxx_exception_stubs.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/cxx/cxx_guards.cpp" ],
             "include_dirs": []
         },
@@ -159,7 +159,7 @@
             "priv_reqs": [ "efuse", "esp_timer", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/driver/libdriver.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/driver/libdriver.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/gpio/gpio.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/gpio/gpio_glitch_filter_ops.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/gpio/rtc_io.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/spi/spi_bus_lock.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/adc_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/adc_dma_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/dac/dac_oneshot.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/dac/dac_cosine.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/dac/dac_continuous.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/dac/dac_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/dac/esp32/dac_dma.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/dac_common_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/esp32/dac_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/gptimer/gptimer.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/gptimer/gptimer_priv.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/timer_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2c/i2c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2c/i2c_master.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2c/i2c_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2c/i2c_slave.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2s/i2s_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2s/i2s_platform.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2s/i2s_std.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/i2s_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/i2s/i2s_pdm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/ledc/ledc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/mcpwm/mcpwm_cap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/mcpwm/mcpwm_cmpr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/mcpwm/mcpwm_com.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/mcpwm/mcpwm_fault.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/mcpwm/mcpwm_gen.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/mcpwm/mcpwm_oper.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/mcpwm/mcpwm_sync.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/mcpwm/mcpwm_timer.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/mcpwm_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/pcnt/pulse_cnt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/pcnt_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/rmt/rmt_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/rmt/rmt_encoder.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/rmt/rmt_rx.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/rmt/rmt_tx.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/rmt_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/sdio_slave/sdio_slave.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/sdmmc/sdmmc_transaction.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/sdmmc/sdmmc_host.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/sigma_delta/sdm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/sigma_delta_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/spi/gpspi/spi_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/spi/gpspi/spi_master.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/spi/gpspi/spi_slave.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/spi/sdspi/sdspi_crc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/spi/sdspi/sdspi_host.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/spi/sdspi/sdspi_transaction.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/touch_sensor/touch_sensor_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/touch_sensor/esp32/touch_sensor.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/twai/twai.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/uart/uart.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/driver/deprecated/adc_i2s_deprecated.c" ],
             "include_dirs": [ "include", "deprecated", "analog_comparator/include", "dac/include", "gpio/include", "gptimer/include", "i2c/include", "i2s/include", "ledc/include", "mcpwm/include", "parlio/include", "pcnt/include", "rmt/include", "sdio_slave/include", "sdmmc/include", "sigma_delta/include", "spi/include", "temperature_sensor/include", "touch_sensor/include", "twai/include", "uart/include", "usb_serial_jtag/include", "touch_sensor/esp32/include" ]
         },
@@ -174,7 +174,7 @@
             "priv_reqs": [ "bootloader_support", "soc", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/efuse/libefuse.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/efuse/libefuse.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/efuse/esp32/esp_efuse_table.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/efuse/esp32/esp_efuse_fields.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/efuse/esp32/esp_efuse_utility.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/efuse/src/esp_efuse_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/efuse/src/esp_efuse_fields.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/efuse/src/esp_efuse_utility.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/efuse/src/efuse_controller/keys/without_key_purposes/three_key_blocks/esp_efuse_api_key.c" ],
             "include_dirs": [ "include", "esp32/include" ]
         },
@@ -189,7 +189,7 @@
             "priv_reqs": [ "http_parser", "esp_timer", "lwip" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp-tls/libesp-tls.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp-tls/libesp-tls.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls/esp_tls.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls/esp-tls-crypto/esp_tls_crypto.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls/esp_tls_error_capture.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls/esp_tls_platform_port.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls/esp_tls_mbedtls.c" ],
             "include_dirs": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp-tls", "esp-tls-crypto" ]
         },
@@ -204,7 +204,7 @@
             "priv_reqs": [ "driver", "efuse" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_adc/libesp_adc.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_adc/libesp_adc.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/adc_cali.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/adc_cali_curve_fitting.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/deprecated/esp_adc_cal_common_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/adc_oneshot.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/adc_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/adc_continuous.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/esp32/adc_cali_line_fitting.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_adc/deprecated/esp32/esp_adc_cal_legacy.c" ],
             "include_dirs": [ "include", "interface", "esp32/include", "deprecated/include" ]
         },
@@ -219,7 +219,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_app_format/libesp_app_format.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_app_format/libesp_app_format.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_app_format/esp_app_desc.c" ],
             "include_dirs": [ "include" ]
         },
@@ -234,7 +234,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_bootloader_format/libesp_bootloader_format.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_bootloader_format/libesp_bootloader_format.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_bootloader_format/esp_bootloader_desc.c" ],
             "include_dirs": [ "include" ]
         },
@@ -249,7 +249,7 @@
             "priv_reqs": [ "esp_timer", "driver", "esp_event" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_coex/libesp_coex.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_coex/libesp_coex.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_coex/src/coexist.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_coex/esp32/esp_coex_adapter.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_coex/src/coexist_debug_diagram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_coex/src/coexist_debug.c" ],
             "include_dirs": [ "include" ]
         },
@@ -264,7 +264,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_common/libesp_common.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_common/libesp_common.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_common/src/esp_err_to_name.c" ],
             "include_dirs": [ "include" ]
         },
@@ -279,7 +279,7 @@
             "priv_reqs": [ "driver", "log", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_eth/libesp_eth.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_eth/libesp_eth.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/src/esp_eth.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/src/esp_eth_phy_802_3.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/src/esp_eth_netif_glue.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/src/esp_eth_mac_esp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/src/esp_eth_phy_dp83848.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/src/esp_eth_phy_ip101.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/src/esp_eth_phy_ksz80xx.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/src/esp_eth_phy_lan87xx.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_eth/src/esp_eth_phy_rtl8201.c" ],
             "include_dirs": [ "include" ]
         },
@@ -294,7 +294,7 @@
             "priv_reqs": [ "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_event/libesp_event.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_event/libesp_event.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_event/default_event_loop.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_event/esp_event.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_event/esp_event_private.c" ],
             "include_dirs": [ "include" ]
         },
@@ -309,7 +309,7 @@
             "priv_reqs": [ "soc", "esp_rom", "esp_system" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_gdbstub/libesp_gdbstub.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_gdbstub/libesp_gdbstub.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_gdbstub/src/gdbstub.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_gdbstub/src/gdbstub_transport.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_gdbstub/src/packet.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_gdbstub/src/port/xtensa/gdbstub_xtensa.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_gdbstub/src/port/xtensa/gdbstub-entry.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_gdbstub/src/port/xtensa/xt_debugexception.S" ],
             "include_dirs": [ "include" ]
         },
@@ -324,7 +324,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_hid/libesp_hid.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_hid/libesp_hid.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid/src/esp_hidd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid/src/esp_hidh.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid/src/esp_hid_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid/src/ble_hidd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid/src/ble_hidh.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid/src/bt_hidh.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hid/src/bt_hidd.c" ],
             "include_dirs": [ "include" ]
         },
@@ -339,7 +339,7 @@
             "priv_reqs": [ "tcp_transport", "http_parser" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_http_client/libesp_http_client.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_http_client/libesp_http_client.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_client/esp_http_client.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_client/lib/http_auth.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_client/lib/http_header.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_client/lib/http_utils.c" ],
             "include_dirs": [ "include" ]
         },
@@ -354,7 +354,7 @@
             "priv_reqs": [ "mbedtls", "lwip", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_http_server/libesp_http_server.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_http_server/libesp_http_server.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server/src/httpd_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server/src/httpd_parse.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server/src/httpd_sess.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server/src/httpd_txrx.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server/src/httpd_uri.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server/src/httpd_ws.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_http_server/src/util/ctrl_sock.c" ],
             "include_dirs": [ "include" ]
         },
@@ -369,7 +369,7 @@
             "priv_reqs": [ "log", "app_update" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_https_ota/libesp_https_ota.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_https_ota/libesp_https_ota.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_https_ota/src/esp_https_ota.c" ],
             "include_dirs": [ "include" ]
         },
@@ -399,7 +399,7 @@
             "priv_reqs": [ "efuse", "spi_flash", "bootloader_support", "driver", "esp_timer", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_hw_support/libesp_hw_support.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_hw_support/libesp_hw_support.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/cpu.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/esp_cpu_intr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/esp_memory_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/cpu_region_protect.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/esp_clk.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/clk_ctrl_os.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/hw_random.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/intr_alloc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/mac_addr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/periph_ctrl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/revision.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/rtc_module.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/sleep_modes.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/sleep_console.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/sleep_gpio.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/sleep_event.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/sleep_modem.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/regi2c_ctrl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/esp_gpio_reserve.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/sar_periph_ctrl_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/io_mux.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/esp_clk_tree.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp_clk_tree_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/dma/esp_dma_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/adc_share_hw_ctrl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/rtc_wdt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/mspi_timing_tuning.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/mspi_timing_config.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/sleep_wake_stub.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/esp_clock_output.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/rtc_clk.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/rtc_clk_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/rtc_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/rtc_sleep.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/rtc_time.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/chip_info.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/cache_sram_mmu.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/esp_crypto_lock.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_hw_support/port/esp32/sar_periph_ctrl.c" ],
             "include_dirs": [ "include", "include/soc", "include/soc/esp32" ]
         },
@@ -414,7 +414,7 @@
             "priv_reqs": [ "esp_mm", "esp_psram" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_lcd/libesp_lcd.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_lcd/libesp_lcd.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_panel_io.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_panel_io_i2c_v1.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_panel_io_i2c_v2.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_panel_io_spi.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_panel_nt35510.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_panel_ssd1306.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_panel_st7789.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_panel_ops.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_lcd/src/esp_lcd_panel_io_i2s.c" ],
             "include_dirs": [ "include", "interface" ]
         },
@@ -429,7 +429,7 @@
             "priv_reqs": [ "protobuf-c" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_local_ctrl/libesp_local_ctrl.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_local_ctrl/libesp_local_ctrl.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_local_ctrl/src/esp_local_ctrl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_local_ctrl/src/esp_local_ctrl_handler.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_local_ctrl/proto-c/esp_local_ctrl.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_local_ctrl/src/esp_local_ctrl_transport_ble.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_local_ctrl/src/esp_local_ctrl_transport_httpd.c" ],
             "include_dirs": [ "include" ]
         },
@@ -444,7 +444,7 @@
             "priv_reqs": [ "heap", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_mm/libesp_mm.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_mm/libesp_mm.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_mm/esp_mmu_map.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_mm/port/esp32/ext_mem_layout.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_mm/esp_cache.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_mm/cache_esp32.c" ],
             "include_dirs": [ "include" ]
         },
@@ -459,7 +459,7 @@
             "priv_reqs": [ "esp_netif_stack" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_netif/libesp_netif.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_netif/libesp_netif.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/esp_netif_handlers.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/esp_netif_objects.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/esp_netif_defaults.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/lwip/esp_netif_lwip.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/lwip/esp_netif_sntp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/lwip/esp_netif_lwip_defaults.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/lwip/netif/wlanif.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/lwip/netif/ethernetif.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_netif/lwip/netif/esp_pbuf_ref.c" ],
             "include_dirs": [ "include" ]
         },
@@ -489,7 +489,7 @@
             "priv_reqs": [ "esp_system", "bootloader_support", "spi_flash", "app_update", "partition_table" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_partition/libesp_partition.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_partition/libesp_partition.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_partition/partition.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_partition/partition_target.c" ],
             "include_dirs": [ "include" ]
         },
@@ -504,7 +504,7 @@
             "priv_reqs": [ "nvs_flash", "driver", "efuse", "esp_timer", "esp_wifi" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_phy/libesp_phy.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_phy/libesp_phy.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_phy/src/phy_override.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_phy/src/lib_printf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_phy/src/phy_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_phy/src/phy_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_phy/src/btbb_init.c" ],
             "include_dirs": [ "include", "esp32/include" ]
         },
@@ -519,7 +519,7 @@
             "priv_reqs": [ "esp_system", "driver", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_pm/libesp_pm.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_pm/libesp_pm.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_pm/pm_locks.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_pm/pm_trace.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_pm/pm_impl.c" ],
             "include_dirs": [ "include" ]
         },
@@ -549,7 +549,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_ringbuf/libesp_ringbuf.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_ringbuf/libesp_ringbuf.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_ringbuf/ringbuf.c" ],
             "include_dirs": [ "include" ]
         },
@@ -564,7 +564,7 @@
             "priv_reqs": [ "soc", "hal" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_rom/libesp_rom.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_rom/libesp_rom.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/patches/esp_rom_crc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/patches/esp_rom_sys.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/patches/esp_rom_uart.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/patches/esp_rom_spiflash.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/patches/esp_rom_efuse.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/patches/esp_rom_gpio.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_rom/patches/esp_rom_longjmp.S" ],
             "include_dirs": [ "include", "include/esp32", "esp32" ]
         },
@@ -579,7 +579,7 @@
             "priv_reqs": [ "spi_flash", "esp_timer", "esp_mm", "pthread", "bootloader_support", "efuse", "driver", "esp_partition" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_system/libesp_system.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_system/libesp_system.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/esp_err.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/crosscore_int.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/esp_ipc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/freertos_hooks.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/int_wdt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/panic.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/esp_system.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/startup.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/system_time.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/stack_check.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/ubsan.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/xt_wdt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/debug_stubs.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/task_wdt/task_wdt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/task_wdt/task_wdt_impl_timergroup.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/cpu_start.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/panic_handler.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/esp_system_chip.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/brownout.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/esp_ipc_isr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/esp_ipc_isr_port.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/esp_ipc_isr_handler.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/esp_ipc_isr_routines.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/panic_arch.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/panic_handler_asm.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/expression_with_stack.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/expression_with_stack_asm.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/debug_helpers.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/debug_helpers_asm.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/debug_stubs.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/arch/xtensa/trax.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/soc/esp32/highint_hdl.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/soc/esp32/clk.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/soc/esp32/reset_reason.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/soc/esp32/system_internal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_system/port/soc/esp32/cache_err_int.c" ],
             "include_dirs": [ "include" ]
         },
@@ -594,7 +594,7 @@
             "priv_reqs": [ "soc", "driver" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_timer/libesp_timer.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_timer/libesp_timer.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_timer/src/esp_timer.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_timer/src/ets_timer_legacy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_timer/src/system_time.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_timer/src/esp_timer_impl_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c" ],
             "include_dirs": [ "include" ]
         },
@@ -609,7 +609,7 @@
             "priv_reqs": [ "driver", "esptool_py", "esp_pm", "esp_timer", "nvs_flash", "wpa_supplicant", "hal", "lwip", "esp_coex" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/esp_wifi/libesp_wifi.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/esp_wifi/libesp_wifi.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/src/mesh_event.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/src/smartconfig.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/src/wifi_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/src/wifi_default.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/src/wifi_netif.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/src/wifi_default_ap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/esp32/esp_adapter.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/esp_wifi/src/smartconfig_ack.c" ],
             "include_dirs": [ "include", "wifi_apps/include" ]
         },
@@ -624,7 +624,7 @@
             "priv_reqs": [ "esp_partition", "spi_flash", "bootloader_support", "mbedtls", "esp_rom", "soc", "esp_system", "driver" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/espcoredump/libespcoredump.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/espcoredump/libespcoredump.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/src/core_dump_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/src/core_dump_flash.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/src/core_dump_uart.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/src/core_dump_elf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/src/core_dump_binary.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/src/core_dump_sha.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/src/core_dump_crc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/espcoredump/src/port/xtensa/core_dump_port.c" ],
             "include_dirs": [ "include", "include/port/xtensa" ]
         },
@@ -654,7 +654,7 @@
             "priv_reqs": [ "vfs" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/fatfs/libfatfs.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/fatfs/libfatfs.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/diskio/diskio.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/diskio/diskio_rawflash.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/diskio/diskio_wl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/src/ff.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/src/ffunicode.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/port/freertos/ffsystem.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/diskio/diskio_sdmmc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/vfs/vfs_fat.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/vfs/vfs_fat_sdmmc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/fatfs/vfs/vfs_fat_spiflash.c" ],
             "include_dirs": [ "diskio", "src", "vfs" ]
         },
@@ -669,7 +669,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/freertos/libfreertos.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/freertos/libfreertos.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/heap_idf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/app_startup.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/port_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/port_systick.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/list.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/timers.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/event_groups.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/stream_buffer.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/portasm.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/xtensa_overlay_os_hook.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/esp_additions/freertos_compatibility.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/esp_additions/idf_additions_event_groups.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/freertos/esp_additions/idf_additions.c" ],
             "include_dirs": [ "config/include", "config/include/freertos", "config/xtensa/include", "FreeRTOS-Kernel/include", "FreeRTOS-Kernel/portable/xtensa/include", "FreeRTOS-Kernel/portable/xtensa/include/freertos", "esp_additions/include" ]
         },
@@ -684,7 +684,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/hal/libhal.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/hal/libhal.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/hal_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/mpu_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/efuse_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/esp32/efuse_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/wdt_hal_iram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/mmu_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/esp32/cache_hal_esp32.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/spi_flash_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/spi_flash_hal_iram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/spi_flash_encrypt_hal_iram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/esp32/clk_tree_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/uart_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/uart_hal_iram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/gpio_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/rtc_io_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/timer_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/ledc_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/ledc_hal_iram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/i2c_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/i2c_hal_iram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/rmt_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/pcnt_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/mcpwm_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/twai_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/twai_hal_iram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/i2s_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/sdm_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/sdmmc_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/emac_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/adc_hal_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/adc_oneshot_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/adc_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/mpi_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/sha_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/aes_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/brownout_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/spi_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/spi_hal_iram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/spi_slave_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/spi_slave_hal_iram.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/sdio_slave_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/touch_sensor_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/esp32/touch_sensor_hal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/hal/esp32/gpio_hal_workaround.c" ],
             "include_dirs": [ "platform_port/include", "esp32/include", "include" ]
         },
@@ -699,7 +699,7 @@
             "priv_reqs": [ "soc" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/heap/libheap.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/heap/libheap.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/heap/heap_caps_base.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/heap/heap_caps.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/heap/heap_caps_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/heap/multi_heap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/heap/tlsf/tlsf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/heap/port/memory_layout_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/heap/port/esp32/memory_layout.c" ],
             "include_dirs": [ "include" ]
         },
@@ -714,7 +714,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/http_parser/libhttp_parser.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/http_parser/libhttp_parser.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/http_parser/http_parser.c" ],
             "include_dirs": [ "." ]
         },
@@ -759,7 +759,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/json/libjson.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/json/libjson.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/json/cJSON/cJSON.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/json/cJSON/cJSON_Utils.c" ],
             "include_dirs": [ "cJSON" ]
         },
@@ -774,7 +774,7 @@
             "priv_reqs": [ "soc", "hal", "esp_hw_support" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/log/liblog.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/log/liblog.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/log/log.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/log/log_buffers.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/log/log_freertos.c" ],
             "include_dirs": [ "include" ]
         },
@@ -789,7 +789,7 @@
             "priv_reqs": [ "vfs" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/lwip/liblwip.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/lwip/liblwip.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/apps/sntp/sntp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/api/api_lib.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/api/api_msg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/api/err.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/api/if_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/api/netbuf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/api/netdb.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/api/netifapi.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/api/sockets.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/api/tcpip.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/apps/sntp/sntp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/apps/netbiosns/netbiosns.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/def.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/dns.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/inet_chksum.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ip.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/mem.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/memp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/netif.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/pbuf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/raw.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/stats.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/sys.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/tcp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/tcp_in.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/tcp_out.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/timeouts.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/udp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv4/autoip.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv4/dhcp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv4/etharp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv4/icmp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv4/igmp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv4/ip4.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv4/ip4_napt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv4/ip4_addr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv4/ip4_frag.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv6/dhcp6.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv6/ethip6.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv6/icmp6.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv6/inet6.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv6/ip6.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv6/ip6_addr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv6/ip6_frag.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv6/mld6.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/core/ipv6/nd6.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ethernet.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/bridgeif.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/bridgeif_fdb.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/slipif.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/auth.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/ccp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/chap-md5.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/chap-new.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/chap_ms.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/demand.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/eap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/ecp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/eui64.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/fsm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/ipcp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/ipv6cp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/lcp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/magic.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/mppe.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/multilink.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/ppp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/pppapi.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/pppcrypt.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/pppoe.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/pppol2tp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/pppos.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/upap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/vj.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/hooks/tcp_isn_default.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/hooks/lwip_default_hooks.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/debug/lwip_debug.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/sockets_ext.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/freertos/sys_arch.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/port/esp32xx/vfs_lwip.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/apps/ping/esp_ping.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/apps/ping/ping.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/apps/ping/ping_sock.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/polarssl/arc4.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/polarssl/des.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/polarssl/md4.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/polarssl/md5.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/lwip/src/netif/ppp/polarssl/sha1.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/lwip/apps/dhcpserver/dhcpserver.c" ],
             "include_dirs": [ "include", "include/apps", "include/apps/sntp", "lwip/src/include", "port/include", "port/freertos/include/", "port/esp32xx/include", "port/esp32xx/include/arch", "port/esp32xx/include/sys" ]
         },
@@ -797,15 +797,15 @@
             "alias": "idf::main",
             "target": "___idf_main",
             "prefix": "idf",
-            "dir": "E:/MyProject/ESP32/led/main",
+            "dir": "E:/MyProject/UniProject_agent/led/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/main/libmain.a",
-            "sources": [ "E:/MyProject/ESP32/led/main/ble_app.c", "E:/MyProject/ESP32/led/main/dht11.c", "E:/MyProject/ESP32/led/main/led.c" ],
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/main/libmain.a",
+            "sources": [ "E:/MyProject/UniProject_agent/led/main/ble_app.c", "E:/MyProject/UniProject_agent/led/main/dht11.c", "E:/MyProject/UniProject_agent/led/main/led.c" ],
             "include_dirs": [ "." ]
         },
         "mbedtls": {
@@ -819,8 +819,8 @@
             "priv_reqs": [ "soc", "esp_hw_support", "esp_pm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/mbedtls/libmbedtls.a",
-            "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls/esp_crt_bundle/esp_crt_bundle.c", "E:/MyProject/ESP32/led/build/x509_crt_bundle.S" ],
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/mbedtls/libmbedtls.a",
+            "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/mbedtls/esp_crt_bundle/esp_crt_bundle.c", "E:/MyProject/UniProject_agent/led/build/x509_crt_bundle.S" ],
             "include_dirs": [ "port/include", "mbedtls/include", "mbedtls/library", "esp_crt_bundle/include" ]
         },
         "mqtt": {
@@ -834,7 +834,7 @@
             "priv_reqs": [ "esp_timer", "http_parser", "esp_hw_support", "heap" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/mqtt/libmqtt.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/mqtt/libmqtt.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/mqtt/esp-mqtt/mqtt_client.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/mqtt/esp-mqtt/lib/mqtt_msg.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/mqtt/esp-mqtt/lib/mqtt_outbox.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/mqtt/esp-mqtt/lib/platform_esp32_idf.c" ],
             "include_dirs": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/mqtt/esp-mqtt/include" ]
         },
@@ -849,7 +849,7 @@
             "priv_reqs": [ "soc", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/newlib/libnewlib.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/newlib/libnewlib.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/abort.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/assert.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/heap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/locks.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/poll.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/pthread.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/random.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/getentropy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/reent_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/newlib_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/syscalls.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/termios.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/stdatomic.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/time.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/sysconf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/realpath.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/newlib/port/esp_time_impl.c" ],
             "include_dirs": [ "platform_include" ]
         },
@@ -864,7 +864,7 @@
             "priv_reqs": [ "spi_flash", "newlib" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/nvs_flash/libnvs_flash.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/nvs_flash/libnvs_flash.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_api.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_cxx_api.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_item_hash_list.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_page.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_storage.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_handle_simple.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_handle_locked.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_partition.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_partition_lookup.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_types.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_platform.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_flash/src/nvs_encrypted_partition.cpp" ],
             "include_dirs": [ "include", "../spi_flash/include" ]
         },
@@ -879,7 +879,7 @@
             "priv_reqs": [ "bootloader_support", "efuse", "esp_partition", "nvs_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/nvs_sec_provider/libnvs_sec_provider.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/nvs_sec_provider/libnvs_sec_provider.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/nvs_sec_provider/nvs_sec_provider.c" ],
             "include_dirs": [ "include" ]
         },
@@ -924,7 +924,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/perfmon/libperfmon.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/perfmon/libperfmon.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/perfmon/xtensa_perfmon_access.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/perfmon/xtensa_perfmon_apis.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/perfmon/xtensa_perfmon_masks.c" ],
             "include_dirs": [ "include" ]
         },
@@ -939,7 +939,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/protobuf-c/libprotobuf-c.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/protobuf-c/libprotobuf-c.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.c" ],
             "include_dirs": [ "protobuf-c" ]
         },
@@ -954,7 +954,7 @@
             "priv_reqs": [ "protobuf-c", "mbedtls", "console", "esp_http_server", "driver" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/protocomm/libprotocomm.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/protocomm/libprotocomm.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/common/protocomm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/proto-c/constants.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/proto-c/sec0.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/proto-c/sec1.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/proto-c/sec2.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/proto-c/session.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/transports/protocomm_console.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/transports/protocomm_httpd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/security/security0.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/security/security1.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/security/security2.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/crypto/srp6a/esp_srp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/crypto/srp6a/esp_srp_mpi.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/simple_ble/simple_ble.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/protocomm/src/transports/protocomm_ble.c" ],
             "include_dirs": [ "include/common", "include/security", "include/transports", "include/crypto/srp6a", "proto-c" ]
         },
@@ -969,7 +969,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/pthread/libpthread.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/pthread/libpthread.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/pthread/pthread.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/pthread/pthread_cond_var.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/pthread/pthread_local_storage.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/pthread/pthread_rwlock.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/pthread/pthread_semaphore.c" ],
             "include_dirs": [ "include" ]
         },
@@ -984,7 +984,7 @@
             "priv_reqs": [ "soc", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/sdmmc/libsdmmc.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/sdmmc/libsdmmc.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/sdmmc/sdmmc_cmd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/sdmmc/sdmmc_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/sdmmc/sdmmc_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/sdmmc/sdmmc_io.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/sdmmc/sdmmc_mmc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/sdmmc/sdmmc_sd.c" ],
             "include_dirs": [ "include" ]
         },
@@ -999,7 +999,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/soc/libsoc.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/soc/libsoc.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/lldesc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/dport_access_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/interrupts.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/gpio_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/uart_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/dport_access.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/adc_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/spi_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/ledc_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/pcnt_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/rmt_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/sdm_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/i2s_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/i2c_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/timer_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/lcd_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/mcpwm_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/mpi_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/sdmmc_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/touch_sensor_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/twai_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/dac_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/rtc_io_periph.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/soc/esp32/sdio_slave_periph.c" ],
             "include_dirs": [ "include", "esp32", "esp32/include" ]
         },
@@ -1014,7 +1014,7 @@
             "priv_reqs": [ "bootloader_support", "app_update", "soc", "driver", "esp_mm" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/spi_flash/libspi_flash.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/spi_flash/libspi_flash.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/flash_brownout_hook.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_chip_drivers.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_chip_generic.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_chip_issi.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_chip_mxic.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_chip_gd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_chip_winbond.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_chip_boya.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_chip_mxic_opi.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_chip_th.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/memspi_host_driver.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/cache_utils.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/flash_mmap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/flash_ops.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_wrap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/esp_flash_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/esp_flash_spi_init.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_os_func_app.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spi_flash/spi_flash_os_func_noos.c" ],
             "include_dirs": [ "include" ]
         },
@@ -1029,7 +1029,7 @@
             "priv_reqs": [ "bootloader_support", "esptool_py", "vfs", "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/spiffs/libspiffs.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/spiffs/libspiffs.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs/spiffs_api.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs/spiffs/src/spiffs_cache.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs/spiffs/src/spiffs_check.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs/spiffs/src/spiffs_gc.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs/spiffs/src/spiffs_hydrogen.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs/spiffs/src/spiffs_nucleus.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/spiffs/esp_spiffs.c" ],
             "include_dirs": [ "include" ]
         },
@@ -1044,7 +1044,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/tcp_transport/libtcp_transport.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/tcp_transport/libtcp_transport.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/tcp_transport/transport.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/tcp_transport/transport_ssl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/tcp_transport/transport_internal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/tcp_transport/transport_socks_proxy.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/tcp_transport/transport_ws.c" ],
             "include_dirs": [ "include" ]
         },
@@ -1074,7 +1074,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/unity/libunity.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/unity/libunity.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/unity/unity/src/unity.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/unity/unity_runner.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/unity/unity_utils_freertos.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/unity/unity_utils_cache.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/unity/unity_utils_memory.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/unity/unity_port_esp32.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/unity/port/esp/unity_utils_memory_esp.c" ],
             "include_dirs": [ "include", "unity/src" ]
         },
@@ -1104,7 +1104,7 @@
             "priv_reqs": [ "driver", "esp_timer" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/vfs/libvfs.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/vfs/libvfs.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/vfs/vfs.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/vfs/vfs_eventfd.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/vfs/vfs_uart.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/vfs/vfs_semihost.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/vfs/vfs_console.c" ],
             "include_dirs": [ "include" ]
         },
@@ -1119,7 +1119,7 @@
             "priv_reqs": [ "spi_flash" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/wear_levelling/libwear_levelling.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/wear_levelling/libwear_levelling.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling/Partition.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling/SPI_Flash.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling/WL_Ext_Perf.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling/WL_Ext_Safe.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling/WL_Flash.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling/crc32.cpp", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wear_levelling/wear_levelling.cpp" ],
             "include_dirs": [ "include" ]
         },
@@ -1134,7 +1134,7 @@
             "priv_reqs": [ "protobuf-c", "bt", "json", "esp_timer", "esp_wifi" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/wifi_provisioning/libwifi_provisioning.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/wifi_provisioning/libwifi_provisioning.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/src/wifi_config.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/src/wifi_scan.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/src/wifi_ctrl.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/src/manager.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/src/handlers.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/src/scheme_console.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/proto-c/wifi_config.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/proto-c/wifi_scan.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/proto-c/wifi_ctrl.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/proto-c/wifi_constants.pb-c.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/src/scheme_softap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wifi_provisioning/src/scheme_ble.c" ],
             "include_dirs": [ "include" ]
         },
@@ -1149,7 +1149,7 @@
             "priv_reqs": [ "mbedtls", "esp_timer", "esp_wifi" ],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/wpa_supplicant/libwpa_supplicant.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/wpa_supplicant/libwpa_supplicant.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/port/os_xtensa.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/port/eloop.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/ap/ap_config.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/ap/ieee802_1x.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/ap/wpa_auth.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/ap/wpa_auth_ie.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/ap/pmksa_cache_auth.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/ap/sta_info.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/ap/ieee802_11.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/ap/comeback_token.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/common/sae.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/common/dragonfly.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/common/wpa_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/utils/bitfield.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/aes-siv.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/sha256-kdf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/ccmp.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/aes-gcm.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/crypto_ops.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/dh_group5.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/dh_groups.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/ms_funcs.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/sha1-tlsprf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/sha256-tlsprf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/sha384-tlsprf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/sha256-prf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/sha1-prf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/sha384-prf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/md4-internal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/sha1-tprf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_common/eap_wsc_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/common/ieee802_11_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/chap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_mschapv2.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_peap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_peap_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_tls.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_tls_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_ttls.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/mschapv2.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_fast.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_fast_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/eap_peer/eap_fast_pac.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/rsn_supp/pmksa_cache.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/rsn_supp/wpa_ie.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/utils/base64.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/utils/common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/utils/ext_password.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/utils/uuid.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/utils/wpabuf.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/utils/wpa_debug.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/utils/json.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/wps/wps.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/wps/wps_attr_build.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/wps/wps_attr_parse.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/wps/wps_attr_process.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/wps/wps_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/wps/wps_dev_attr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/wps/wps_enrollee.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/common/sae_pk.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_eap_client.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_wpa2_api_port.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_wpa_main.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_wpas_glue.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_common.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_wps.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_wpa3.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_owe.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/esp_hostap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/tls_mbedtls.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/fastpbkdf2.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls-bignum.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls-rsa.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/esp_supplicant/src/crypto/crypto_mbedtls-ec.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/rc4.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/des-internal.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/aes-wrap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/aes-unwrap.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/wpa_supplicant/src/crypto/aes-ccm.c" ],
             "include_dirs": [ "include", "port/include", "esp_supplicant/include" ]
         },
@@ -1164,7 +1164,7 @@
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "file": "E:/MyProject/ESP32/led/build/esp-idf/xtensa/libxtensa.a",
+            "file": "E:/MyProject/UniProject_agent/led/build/esp-idf/xtensa/libxtensa.a",
             "sources": [ "E:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa/eri.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa/xt_trax.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa/xtensa_context.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa/xtensa_intr_asm.S", "E:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa/xtensa_intr.c", "E:/CodeTool/esp/v5.2.5/esp-idf/components/xtensa/xtensa_vectors.S" ],
             "include_dirs": [ "esp32/include", "include", "deprecated_include" ]
         }
@@ -2110,7 +2110,7 @@
             "alias": "idf::main",
             "target": "___idf_main",
             "prefix": "idf",
-            "dir": "E:/MyProject/ESP32/led/main",
+            "dir": "E:/MyProject/UniProject_agent/led/main",
             "lib": "__idf_main",
             "reqs": [],
             "priv_reqs": [],
@@ -2121,10 +2121,10 @@
     },
     "debug_prefix_map_gdbinit": "",
     "gdbinit_files": {
-        "01_symbols": "E:/MyProject/ESP32/led/build/gdbinit/symbols",
-        "02_prefix_map": "E:/MyProject/ESP32/led/build/gdbinit/prefix_map",
-        "03_py_extensions": "E:/MyProject/ESP32/led/build/gdbinit/py_extensions",
-        "04_connect": "E:/MyProject/ESP32/led/build/gdbinit/connect"
+        "01_symbols": "E:/MyProject/UniProject_agent/led/build/gdbinit/symbols",
+        "02_prefix_map": "E:/MyProject/UniProject_agent/led/build/gdbinit/prefix_map",
+        "03_py_extensions": "E:/MyProject/UniProject_agent/led/build/gdbinit/py_extensions",
+        "04_connect": "E:/MyProject/UniProject_agent/led/build/gdbinit/connect"
     },
     "debug_arguments_openocd": "-f board/esp32-wrover-kit-3.3v.cfg"
 }

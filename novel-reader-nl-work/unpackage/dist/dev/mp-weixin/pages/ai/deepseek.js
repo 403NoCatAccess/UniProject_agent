@@ -22,6 +22,8 @@ const _sfc_main = {
       // 顶部固定区域高度（动态计算）
       cropsLoaded: false,
       // 作物数据是否加载完成
+      bluetoothConnected: false,
+      // 蓝牙连接状态
       // 作物数据库（从后端获取）
       cropDatabase: {},
       // 存储从后端获取的作物数据
@@ -34,20 +36,24 @@ const _sfc_main = {
       // 适宜湿度
       currentStatus: "待机中",
       // 当前状态（正在调节/调节完毕）
-      currentTemp: 24,
-      // 当前温度（模拟数据）
-      currentHumidity: 55,
-      // 当前湿度（模拟数据）
+      currentTemp: null,
+      // 当前温度（从蓝牙获取）
+      currentHumidity: null,
+      // 当前湿度（从蓝牙获取）
       // 定时器
       tempHumidityTimer: null,
       // 温湿度模拟定时器
-      adjustmentTimer: null
+      adjustmentTimer: null,
       // 调节状态定时器
+      adjustmentStartTime: null
+      // 调节开始时间
     };
   },
   computed: {
     // 根据状态设置样式
     statusClass() {
+      if (!this.bluetoothConnected)
+        return "status-disconnected";
       return this.currentStatus === "正在调节" ? "status-adjusting" : "status-ok";
     }
   },
@@ -65,7 +71,6 @@ const _sfc_main = {
   mounted() {
     this.loadCropsData().then(() => {
       this.loadChatHistory();
-      this.startTempHumiditySimulation();
     });
     this.setupKeyboardListener();
     this.$nextTick(() => {
@@ -76,13 +81,66 @@ const _sfc_main = {
         }
       }).exec();
     });
+    common_vendor.index.$on("bluetooth-status", this.handleBluetoothStatus);
+    common_vendor.index.$on("sensor-data", this.handleSensorData);
+    this.restoreBluetoothState();
   },
   beforeDestroy() {
     clearInterval(this.tempHumidityTimer);
     clearInterval(this.adjustmentTimer);
     common_vendor.index.offKeyboardHeightChange();
+    common_vendor.index.$off("bluetooth-status", this.handleBluetoothStatus);
+    common_vendor.index.$off("sensor-data", this.handleSensorData);
   },
   methods: {
+    // 恢复蓝牙状态
+    restoreBluetoothState() {
+      const savedState = common_vendor.index.getStorageSync("bluetoothState");
+      if (savedState) {
+        this.bluetoothConnected = savedState.connectedDevice !== null;
+        if (savedState.sensorData) {
+          this.currentTemp = savedState.sensorData.temp / 10;
+          this.currentHumidity = savedState.sensorData.humidity;
+        }
+      }
+    },
+    // 处理蓝牙状态变化
+    handleBluetoothStatus(status) {
+      this.bluetoothConnected = status.connected;
+      if (!status.connected) {
+        this.currentTemp = null;
+        this.currentHumidity = null;
+        this.currentStatus = "蓝牙断开";
+      } else {
+        this.currentStatus = "待机中";
+      }
+    },
+    // 处理传感器数据
+    handleSensorData(data) {
+      if (data.temp !== void 0) {
+        this.currentTemp = data.temp;
+      }
+      if (data.humidity !== void 0) {
+        this.currentHumidity = data.humidity;
+      }
+      if (this.currentStatus === "正在调节") {
+        const tempDiff = Math.abs(this.currentTemp - this.suitableTemp);
+        const humidityDiff = Math.abs(this.currentHumidity - this.suitableHumidity);
+        if (tempDiff <= 1 && humidityDiff <= 1) {
+          this.currentStatus = "调节完毕";
+          this.sendControlCommand("stop");
+        }
+        if (this.adjustmentStartTime) {
+          const now = Date.now();
+          const duration = now - this.adjustmentStartTime;
+          const timeout = 10 * 60 * 1e3;
+          if (duration > timeout) {
+            this.currentStatus = "调节超时";
+            this.sendControlCommand("stop");
+          }
+        }
+      }
+    },
     // 加载作物数据
     async loadCropsData() {
       try {
@@ -146,7 +204,7 @@ const _sfc_main = {
       this.scrollTop = Math.random() * 1e4;
     },
     // 加载聊天历史记录
-    loadChatHistory() {
+    load极光ChatHistory() {
       common_vendor.index.getStorage({
         key: "chatHistory",
         success: (res) => {
@@ -175,53 +233,6 @@ const _sfc_main = {
           console.log("聊天记录保存失败");
         }
       });
-    },
-    // 开始温湿度模拟
-    startTempHumiditySimulation() {
-      this.tempHumidityTimer = setInterval(() => {
-        this.currentTemp += (Math.random() - 0.5) * 2;
-        this.currentHumidity += (Math.random() - 0.5) * 2;
-        this.currentTemp = Math.max(10, Math.min(40, this.currentTemp));
-        this.currentHumidity = Math.max(30, Math.min(90, this.currentHumidity));
-        this.checkAdjustmentNeeded();
-      }, 5e3);
-    },
-    // 检查是否需要调节环境（误差范围改为1%）
-    checkAdjustmentNeeded() {
-      if (!this.cropName)
-        return;
-      const tempDiff = Math.abs(this.currentTemp - this.suitableTemp);
-      const humidityDiff = Math.abs(this.currentHumidity - this.suitableHumidity);
-      const tempThreshold = this.suitableTemp * 0.01;
-      const humidityThreshold = this.suitableHumidity * 0.01;
-      if (tempDiff > tempThreshold || humidityDiff > humidityThreshold) {
-        if (this.currentStatus !== "正在调节") {
-          this.currentStatus = "正在调节";
-          this.startAdjustment();
-        }
-      } else if (this.currentStatus !== "调节完毕") {
-        this.currentStatus = "调节完毕";
-        clearInterval(this.adjustmentTimer);
-        this.adjustmentTimer = null;
-      }
-    },
-    // 开始调节过程
-    startAdjustment() {
-      if (this.adjustmentTimer)
-        return;
-      this.adjustmentTimer = setInterval(() => {
-        if (this.currentTemp < this.suitableTemp) {
-          this.currentTemp += 0.5;
-        } else if (this.currentTemp > this.suitableTemp) {
-          this.currentTemp -= 0.5;
-        }
-        if (this.currentHumidity < this.suitableHumidity) {
-          this.currentHumidity += 0.5;
-        } else if (this.currentHumidity > this.suitableHumidity) {
-          this.currentHumidity -= 0.5;
-        }
-        this.checkAdjustmentNeeded();
-      }, 1e3);
     },
     // 发送消息给DeepSeek
     async sendMessage() {
@@ -260,18 +271,30 @@ const _sfc_main = {
     },
     // 执行命令
     executeCommands(commands) {
+      if (!this.bluetoothConnected) {
+        common_vendor.index.showToast({
+          title: "蓝牙未连接，无法执行命令",
+          icon: "none"
+        });
+        return;
+      }
       commands.forEach((command) => {
         console.log("执行命令:", command);
         switch (command.command) {
           case "set_target":
             const [temp, humidity] = command.params.split(",");
             this.setTargetEnvironment(parseFloat(temp), parseFloat(humidity));
+            this.sendControlToDevice(parseFloat(temp), parseFloat(humidity));
             break;
           case "start_adjustment":
-            this.startAdjustment();
+            this.sendControlCommand("start");
+            this.currentStatus = "正在调节";
+            this.adjustmentStartTime = Date.now();
             break;
           case "stop_adjustment":
-            this.stopAdjustment();
+            this.sendControlCommand("stop");
+            this.currentStatus = "调节完毕";
+            this.adjustmentStartTime = null;
             break;
           default:
             console.warn("未知命令:", command.command);
@@ -282,22 +305,24 @@ const _sfc_main = {
     setTargetEnvironment(temp, humidity) {
       this.suitableTemp = temp;
       this.suitableHumidity = humidity;
-      this.sendControlToDevice(temp, humidity);
-      this.currentStatus = "正在调节";
-      this.startAdjustment();
     },
-    // 停止调节
-    stopAdjustment() {
-      this.currentStatus = "调节完毕";
-      clearInterval(this.adjustmentTimer);
-      this.adjustmentTimer = null;
-    },
-    // 发送控制指令到下位机
+    // 发送控制指令到下位机（设置目标温湿度）
     sendControlToDevice(temp, humidity) {
-      console.log(`发送温湿度设置到ESP32: 温度=${temp}°C, 湿度=${humidity}%`);
-      this.$emit("control-device", { temp, humidity });
+      common_vendor.index.$emit("ble-command", {
+        type: "set_target",
+        temp,
+        humidity
+      });
       common_vendor.index.showToast({
         title: "已发送环境设置到下位机",
+        icon: "success"
+      });
+    },
+    // 发送控制命令（启动/停止调节）
+    sendControlCommand(cmdType) {
+      common_vendor.index.$emit("ble-command", { type: cmdType });
+      common_vendor.index.showToast({
+        title: `已发送${cmdType === "start" ? "启动" : "停止"}调节命令`,
         icon: "success"
       });
     }
@@ -324,8 +349,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     e: common_vendor.t($data.suitableHumidity.toFixed(1)),
     f: common_vendor.t($data.currentStatus),
     g: common_vendor.n($options.statusClass),
-    h: common_vendor.t($data.currentTemp.toFixed(1)),
-    i: common_vendor.t($data.currentHumidity.toFixed(1)),
+    h: common_vendor.t($data.currentTemp !== null ? $data.currentTemp.toFixed(1) + "°C" : "--"),
+    i: common_vendor.t($data.currentHumidity !== null ? $data.currentHumidity.toFixed(1) + "%" : "--"),
     j: common_vendor.f($data.chatHistory, (message, index, i0) => {
       return {
         a: common_vendor.t(message.text),

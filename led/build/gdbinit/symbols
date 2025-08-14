@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file E:/MyProject/ESP32/led/build/bootloader/bootloader.elf
+    add-symbol-file E:/MyProject/UniProject_agent/led/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file E:/MyProject/ESP32/led/build/led.elf
+file E:/MyProject/UniProject_agent/led/build/led.elf

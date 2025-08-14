@@ -5,6 +5,7 @@ const pageTitle = () => "../../components/pageTitle.js";
 const ENVIRONMENTAL_SENSING_SERVICE = "0000181A-0000-1000-8000-00805F9B34FB";
 const TEMPERATURE_CHARACTERISTIC = "00002A6E-0000-1000-8000-00805F9B34FB";
 const HUMIDITY_CHARACTERISTIC = "00002A6F-0000-1000-8000-00805F9B34FB";
+const LED_CONTROL_CHARACTERISTIC = "00002A57-0000-1000-8000-00805F9B34FB";
 const _sfc_main = {
   components: {
     pageTitle
@@ -22,6 +23,8 @@ const _sfc_main = {
       serviceId: "",
       characteristicId: "",
       deviceId: "",
+      ledCharacteristicId: "",
+      // 添加LED特征ID
       // 传感器数据
       sensorData: {
         temp: null,
@@ -35,7 +38,104 @@ const _sfc_main = {
       receivedData: []
     };
   },
+  mounted() {
+    common_vendor.index.$on("ble-command", this.handleBleCommand);
+    this.restoreBluetoothState();
+  },
+  onUnload() {
+    this.saveBluetoothState();
+    common_vendor.index.$off("ble-command", this.handleBleCommand);
+    common_vendor.index.offBluetoothAdapterStateChange();
+    common_vendor.index.offBluetoothDeviceFound();
+    common_vendor.index.offBLECharacteristicValueChange();
+  },
   methods: {
+    // 恢复蓝牙状态
+    restoreBluetoothState() {
+      const savedState = common_vendor.index.getStorageSync("bluetoothState");
+      if (savedState) {
+        this.connectedDevice = savedState.connectedDevice;
+        this.deviceId = savedState.deviceId;
+        this.serviceId = savedState.serviceId;
+        this.ledCharacteristicId = savedState.ledCharacteristicId;
+        this.sensorData = savedState.sensorData;
+        if (this.connectedDevice) {
+          this.statusMessage = `已连接: ${this.connectedDevice.name || "未知设备"}`;
+          common_vendor.index.$emit("bluetooth-status", { connected: true });
+          return;
+        }
+      }
+      common_vendor.index.getBluetoothAdapterState({
+        success: (res) => {
+          if (res.available) {
+            this.bluetoothInitialized = true;
+            this.statusMessage = "蓝牙已就绪";
+            common_vendor.index.getConnectedBluetoothDevices({
+              success: (res2) => {
+                if (res2.devices.length > 0) {
+                  const device = res2.devices[0];
+                  this.connectedDevice = device;
+                  this.deviceId = device.deviceId;
+                  this.statusMessage = `已连接: ${device.name || "未知设备"}`;
+                  this.getBLEDeviceServices(device.deviceId);
+                  common_vendor.index.$emit("bluetooth-status", { connected: true });
+                }
+              },
+              fail: (error) => {
+                console.error("获取已连接设备失败:", error);
+              }
+            });
+          }
+        },
+        fail: (error) => {
+          console.error("获取蓝牙适配器状态失败:", error);
+        }
+      });
+    },
+    // 保存蓝牙状态
+    saveBluetoothState() {
+      common_vendor.index.setStorageSync("bluetoothState", {
+        connectedDevice: this.connectedDevice,
+        deviceId: this.deviceId,
+        serviceId: this.serviceId,
+        ledCharacteristicId: this.ledCharacteristicId,
+        sensorData: this.sensorData
+      });
+    },
+    // 处理来自deepseek.vue的命令
+    handleBleCommand(command) {
+      if (!this.connectedDevice) {
+        common_vendor.index.showToast({
+          title: "蓝牙未连接，无法发送命令",
+          icon: "none"
+        });
+        return;
+      }
+      switch (command.type) {
+        case "set_target":
+          this.sendSetTargetCommand(command.temp, command.humidity);
+          break;
+        case "start":
+          this.sendControlCommand("start");
+          break;
+        case "stop":
+          this.sendControlCommand("stop");
+          break;
+        default:
+          console.warn("未知命令类型:", command.type);
+      }
+    },
+    // 发送设置目标温湿度命令
+    sendSetTargetCommand(temp, humidity) {
+      const command = `set_target:${temp.toFixed(1)},${humidity.toFixed(1)}`;
+      this.sendCommand(command);
+      this.addLog(`发送设置命令: ${command}`);
+    },
+    // 发送控制命令（启动/停止）
+    sendControlCommand(cmdType) {
+      this.sendCommand(cmdType);
+      this.addLog(`发送控制命令: ${cmdType}`);
+    },
     // 格式化温度显示
     formatTemperature(value) {
       const integerPart = Math.floor(value / 10);
@@ -75,6 +175,8 @@ const _sfc_main = {
               this.connectedDevice = null;
               this.devices = [];
               this.receivedData = [];
+              common_vendor.index.$emit("bluetooth-status", { connected: false });
+              common_vendor.index.removeStorageSync("bluetoothState");
             }
           });
         },
@@ -109,7 +211,6 @@ const _sfc_main = {
       common_vendor.index.startBluetoothDevicesDiscovery({
         allowDuplicatesKey: false,
         services: [ENVIRONMENTAL_SENSING_SERVICE],
-        // 只搜索环境传感服务  删除这个参数表示全部  数组多个元素可查找多个服务  //建议写上 防止持续显示连接中
         success: (res) => {
           console.log("开始搜索蓝牙设备", res);
           common_vendor.index.hideLoading();
@@ -167,6 +268,7 @@ const _sfc_main = {
           this.deviceId = device.deviceId;
           this.connectedDevice = device;
           this.getBLEDeviceServices(device.deviceId);
+          this.saveBluetoothState();
         },
         fail: (err) => {
           console.error("设备连接失败", err);
@@ -217,11 +319,15 @@ const _sfc_main = {
           }
           const tempChar = res.characteristics.find((c) => c.uuid.toLowerCase() === TEMPERATURE_CHARACTERISTIC.toLowerCase());
           const humidityChar = res.characteristics.find((c) => c.uuid.toLowerCase() === HUMIDITY_CHARACTERISTIC.toLowerCase());
+          const ledChar = res.characteristics.find((c) => c.uuid.toLowerCase() === LED_CONTROL_CHARACTERISTIC.toLowerCase());
           if (tempChar) {
             this.enableBLECharacteristicValueChange(deviceId, serviceId, tempChar.uuid);
           }
           if (humidityChar) {
             this.enableBLECharacteristicValueChange(deviceId, serviceId, humidityChar.uuid);
+          }
+          if (ledChar) {
+            this.ledCharacteristicId = ledChar.uuid;
           }
         },
         fail: (err) => {
@@ -239,7 +345,6 @@ const _sfc_main = {
     // 启用特征值变化监听
     enableBLECharacteristicValueChange(deviceId, serviceId, characteristicId) {
       common_vendor.index.notifyBLECharacteristicValueChange({
-        //启用通知功能
         deviceId,
         serviceId,
         characteristicId,
@@ -257,6 +362,8 @@ const _sfc_main = {
             title: "连接成功",
             icon: "success"
           });
+          common_vendor.index.$emit("bluetooth-status", { connected: true });
+          this.saveBluetoothState();
         },
         fail: (err) => {
           console.error("启用特征值监听失败", err);
@@ -269,7 +376,7 @@ const _sfc_main = {
         }
       });
     },
-    // 处理接收到的数据 - 修复数据解析
+    // 处理接收到的数据
     handleReceivedData(buffer, characteristicId) {
       try {
         if (!(buffer instanceof ArrayBuffer)) {
@@ -283,27 +390,66 @@ const _sfc_main = {
           rawValue = view.getInt16(0, true);
           this.sensorData.temp = rawValue;
           content = `温度: ${this.formatTemperature(rawValue)}`;
+          common_vendor.index.$emit("sensor-data", { temp: rawValue / 10 });
         } else if (characteristicId.toLowerCase() === HUMIDITY_CHARACTERISTIC.toLowerCase()) {
           const view = new DataView(buffer);
           rawValue = view.getUint16(0, true);
           this.sensorData.humidity = rawValue;
           content = `湿度: ${this.formatHumidity(rawValue)}`;
+          common_vendor.index.$emit("sensor-data", { humidity: rawValue });
         } else {
           content = this.arrayBufferToString(buffer);
         }
         this.lastUpdateTime = this.formatTime(/* @__PURE__ */ new Date());
-        this.receivedData.unshift({
-          time: /* @__PURE__ */ new Date(),
-          content,
-          type: "sensor"
-        });
-        if (this.receivedData.length > 100) {
-          this.receivedData.pop();
-        }
-        console.log("接收到数据:", content);
+        this.addLog(content);
+        this.saveBluetoothState();
       } catch (error) {
         console.error("数据处理错误:", error);
       }
+    },
+    // 添加日志
+    addLog(content) {
+      this.receivedData.unshift({
+        time: /* @__PURE__ */ new Date(),
+        content,
+        type: "sensor"
+      });
+      if (this.receivedData.length > 100) {
+        this.receivedData.pop();
+      }
+    },
+    // 修改 sendCommand 方法
+    sendCommand(command) {
+      if (!this.deviceId || !this.serviceId || !this.ledCharacteristicId) {
+        console.error("未连接设备或缺少特征值，无法发送命令");
+        return;
+      }
+      const commandData = this.stringToArrayBuffer(command);
+      common_vendor.index.writeBLECharacteristicValue({
+        deviceId: this.deviceId,
+        serviceId: this.serviceId,
+        characteristicId: this.ledCharacteristicId,
+        value: commandData,
+        success: () => {
+          console.log("命令发送成功:", command);
+        },
+        fail: (err) => {
+          console.error("命令发送失败:", err);
+          common_vendor.index.showToast({
+            title: "命令发送失败",
+            icon: "none"
+          });
+        }
+      });
+    },
+    // 添加字符串转ArrayBuffer的方法（小程序兼容）
+    stringToArrayBuffer(str) {
+      const buf = new ArrayBuffer(str.length);
+      const bufView = new Uint8Array(buf);
+      for (let i = 0; i < str.length; i++) {
+        bufView[i] = str.charCodeAt(i);
+      }
+      return buf;
     },
     // 断开设备连接
     disconnectDevice() {
@@ -323,6 +469,8 @@ const _sfc_main = {
             humidity: null
           };
           common_vendor.index.hideLoading();
+          common_vendor.index.$emit("bluetooth-status", { connected: false });
+          common_vendor.index.removeStorageSync("bluetoothState");
         },
         fail: (err) => {
           console.error("断开连接失败", err);
@@ -345,7 +493,7 @@ const _sfc_main = {
       const seconds = date.getSeconds().toString().padStart(2, "0");
       return `${hours}:${minutes}:${seconds}`;
     },
-    // ArrayBuffer转字符串（用于处理接收到的数据）
+    // ArrayBuffer转字符串
     arrayBufferToString(buffer) {
       const bytes = new Uint8Array(buffer);
       let str = "";

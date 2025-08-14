@@ -1,4 +1,4 @@
-# Install script for directory: E:/MyProject/ESP32/led/main
+# Install script for directory: E:/MyProject/UniProject_agent/led/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

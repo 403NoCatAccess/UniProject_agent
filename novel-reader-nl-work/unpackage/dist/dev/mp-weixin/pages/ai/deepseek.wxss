@@ -61,6 +61,9 @@
   color: #ffc107; /* 黄色表示调节中 */
   animation: pulse 1.5s infinite;
 }
+.status-disconnected {
+  color: #dc3545; /* 红色表示断开连接 */
+}
 @keyframes pulse {
 0% { opacity: 1;
 }

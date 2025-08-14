@@ -18,7 +18,7 @@
           </view>
           <view class="crop-info">
             <text class="label">适宜温度：</text>
-            <text class="value">{{ suitableTemp.toFixed(1) }}°C</text>
+            <text class="value">{{ suitableTemp.toFixed(1) }}&deg;C</text>
           </view>
           <view class="crop-info">
             <text class="label">适宜湿度：</text>
@@ -34,11 +34,11 @@
           </view>
           <view class="crop-info">
             <text class="label">当前温度：</text>
-            <text class="value">{{ currentTemp.toFixed(1) }}°C</text>
+            <text class="value">{{ currentTemp !== null ? currentTemp.toFixed(1) + '&deg;C' : '--' }}</text>
           </view>
           <view class="crop-info">
             <text class="label">当前湿度：</text>
-            <text class="value">{{ currentHumidity.toFixed(1) }}%</text>
+            <text class="value">{{ currentHumidity !== null ? currentHumidity.toFixed(1) + '%' : '--' }}</text>
           </view>
         </view>
       </view>
@@ -100,6 +100,7 @@ export default {
       scrollTop: 0, // 滚动条位置
       fixedTopHeight: 0, // 顶部固定区域高度（动态计算）
       cropsLoaded: false, // 作物数据是否加载完成
+      bluetoothConnected: false, // 蓝牙连接状态
       
       // 作物数据库（从后端获取）
       cropDatabase: {}, // 存储从后端获取的作物数据
@@ -109,17 +110,19 @@ export default {
       suitableTemp: 0, // 适宜温度
       suitableHumidity: 0, // 适宜湿度
       currentStatus: '待机中', // 当前状态（正在调节/调节完毕）
-      currentTemp: 24, // 当前温度（模拟数据）
-      currentHumidity: 55, // 当前湿度（模拟数据）
+      currentTemp: null, // 当前温度（从蓝牙获取）
+      currentHumidity: null, // 当前湿度（从蓝牙获取）
       
       // 定时器
       tempHumidityTimer: null, // 温湿度模拟定时器
       adjustmentTimer: null, // 调节状态定时器
+      adjustmentStartTime: null, // 调节开始时间
     };
   },
   computed: {
     // 根据状态设置样式
     statusClass() {
+      if (!this.bluetoothConnected) return 'status-disconnected';
       return this.currentStatus === '正在调节' ? 'status-adjusting' : 'status-ok';
     }
   },
@@ -141,9 +144,8 @@ export default {
   mounted() {
     // 首先加载作物数据
     this.loadCropsData().then(() => {
-      // 作物数据加载完成后，再加载聊天记录和启动模拟
+      // 作物数据加载完成后，再加载聊天记录
       this.loadChatHistory();
-      this.startTempHumiditySimulation();
     });
     
     // 监听键盘高度变化
@@ -158,6 +160,14 @@ export default {
         }
       }).exec();
     });
+    
+    // 监听蓝牙状态变化
+    uni.$on('bluetooth-status', this.handleBluetoothStatus);
+    // 监听传感器数据更新
+    uni.$on('sensor-data', this.handleSensorData);
+    
+    // 恢复蓝牙状态
+    this.restoreBluetoothState();
   },
   beforeDestroy() {
     // 组件销毁时清除定时器
@@ -166,8 +176,74 @@ export default {
     
     // 移除键盘监听
     uni.offKeyboardHeightChange();
+    
+    // 移除蓝牙事件监听
+    uni.$off('bluetooth-status', this.handleBluetoothStatus);
+    uni.$off('sensor-data', this.handleSensorData);
   },
   methods: {
+    // 恢复蓝牙状态
+    restoreBluetoothState() {
+      // 尝试从本地存储恢复状态
+      const savedState = uni.getStorageSync('bluetoothState');
+      if (savedState) {
+        this.bluetoothConnected = savedState.connectedDevice !== null;
+        if (savedState.sensorData) {
+          this.currentTemp = savedState.sensorData.temp / 10.0; // 转换为实际温度值
+          this.currentHumidity = savedState.sensorData.humidity;
+        }
+      }
+    },
+    
+    // 处理蓝牙状态变化
+    handleBluetoothStatus(status) {
+      this.bluetoothConnected = status.connected;
+      
+      if (!status.connected) {
+        // 蓝牙断开时重置数据
+        this.currentTemp = null;
+        this.currentHumidity = null;
+        this.currentStatus = '蓝牙断开';
+      } else {
+        this.currentStatus = '待机中';
+      }
+    },
+    
+    // 处理传感器数据
+    handleSensorData(data) {
+      if (data.temp !== undefined) {
+        this.currentTemp = data.temp;
+      }
+      if (data.humidity !== undefined) {
+        this.currentHumidity = data.humidity;
+      }
+      
+      // 自动检测调节状态
+      if (this.currentStatus === '正在调节') {
+        // 检查温湿度是否达到目标范围（温度±1°C，湿度±1%）
+        const tempDiff = Math.abs(this.currentTemp - this.suitableTemp);
+        const humidityDiff = Math.abs(this.currentHumidity - this.suitableHumidity);
+        
+        if (tempDiff <= 1.0 && humidityDiff <= 1.0) {
+          this.currentStatus = '调节完毕';
+          // 发送停止调节命令
+          this.sendControlCommand('stop');
+        }
+        
+        // 检查是否超时（10分钟）
+        if (this.adjustmentStartTime) {
+          const now = Date.now();
+          const duration = now - this.adjustmentStartTime;
+          const timeout = 10 * 60 * 1000; // 10分钟
+          
+          if (duration > timeout) {
+            this.currentStatus = '调节超时';
+            this.sendControlCommand('stop');
+          }
+        }
+      }
+    },
+    
     // 加载作物数据
 	async loadCropsData() {
 	  try {
@@ -246,7 +322,7 @@ export default {
     },
     
     // 加载聊天历史记录
-    loadChatHistory() {
+    load极光ChatHistory() {
       uni.getStorage({
         key: 'chatHistory',
         success: (res) => {
@@ -280,72 +356,6 @@ export default {
           console.log('聊天记录保存失败');
         },
       });
-    },
-    
-    // 开始温湿度模拟
-    startTempHumiditySimulation() {
-      // 模拟环境温湿度变化
-      this.tempHumidityTimer = setInterval(() => {
-        // 在±2范围内随机变化
-        this.currentTemp += (Math.random() - 0.5) * 2;
-        this.currentHumidity += (Math.random() - 0.5) * 2;
-        
-        // 确保在合理范围内
-        this.currentTemp = Math.max(10, Math.min(40, this.currentTemp));
-        this.currentHumidity = Math.max(30, Math.min(90, this.currentHumidity));
-        
-        // 检查是否需要调节
-        this.checkAdjustmentNeeded();
-      }, 5000); // 每5秒更新一次
-    },
-    
-    // 检查是否需要调节环境（误差范围改为1%）
-    checkAdjustmentNeeded() {
-      if (!this.cropName) return;
-      
-      const tempDiff = Math.abs(this.currentTemp - this.suitableTemp);
-      const humidityDiff = Math.abs(this.currentHumidity - this.suitableHumidity);
-      
-      // 温度误差范围1%（绝对值）
-      const tempThreshold = this.suitableTemp * 0.01;
-      // 湿度误差范围1%（绝对值）
-      const humidityThreshold = this.suitableHumidity * 0.01;
-      
-      // 如果温度或湿度超出阈值范围
-      if (tempDiff > tempThreshold || humidityDiff > humidityThreshold) {
-        if (this.currentStatus !== '正在调节') {
-          this.currentStatus = '正在调节';
-          this.startAdjustment();
-        }
-      } else if (this.currentStatus !== '调节完毕') {
-        this.currentStatus = '调节完毕';
-        clearInterval(this.adjustmentTimer);
-        this.adjustmentTimer = null;
-      }
-    },
-    
-    // 开始调节过程
-    startAdjustment() {
-      // 如果已经在调节中，不需要重复启动
-      if (this.adjustmentTimer) return;
-      
-      this.adjustmentTimer = setInterval(() => {
-        // 逐步调整温湿度接近目标值
-        if (this.currentTemp < this.suitableTemp) {
-          this.currentTemp += 0.5;
-        } else if (this.currentTemp > this.suitableTemp) {
-          this.currentTemp -= 0.5;
-        }
-        
-        if (this.currentHumidity < this.suitableHumidity) {
-          this.currentHumidity += 0.5;
-        } else if (this.currentHumidity > this.suitableHumidity) {
-          this.currentHumidity -= 0.5;
-        }
-        
-        // 检查是否完成调节
-        this.checkAdjustmentNeeded();
-      }, 1000); // 每秒调整一次
     },
     
     // 发送消息给DeepSeek
@@ -401,18 +411,34 @@ export default {
     
     // 执行命令
     executeCommands(commands) {
+      if (!this.bluetoothConnected) {
+        uni.showToast({
+          title: '蓝牙未连接，无法执行命令',
+          icon: 'none'
+        });
+        return;
+      }
+      
       commands.forEach(command => {
         console.log("执行命令:", command);
         switch(command.command) {
           case 'set_target':
             const [temp, humidity] = command.params.split(',');
             this.setTargetEnvironment(parseFloat(temp), parseFloat(humidity));
+            // 发送设置命令到ESP32
+            this.sendControlToDevice(parseFloat(temp), parseFloat(humidity));
             break;
           case 'start_adjustment':
-            this.startAdjustment();
+            // 发送启动命令到ESP32
+            this.sendControlCommand('start');
+            this.currentStatus = '正在调节';
+            this.adjustmentStartTime = Date.now(); // 记录调节开始时间
             break;
           case 'stop_adjustment':
-            this.stopAdjustment();
+            // 发送停止命令到ESP32
+            this.sendControlCommand('stop');
+            this.currentStatus = '调节完毕';
+            this.adjustmentStartTime = null; // 重置调节开始时间
             break;
           default:
             console.warn('未知命令:', command.command);
@@ -424,31 +450,31 @@ export default {
     setTargetEnvironment(temp, humidity) {
       this.suitableTemp = temp;
       this.suitableHumidity = humidity;
-      this.sendControlToDevice(temp, humidity);
-      
-      // 强制更新状态
-      this.currentStatus = '正在调节';
-      this.startAdjustment();
     },
     
-    // 停止调节
-    stopAdjustment() {
-      this.currentStatus = '调节完毕';
-      clearInterval(this.adjustmentTimer);
-      this.adjustmentTimer = null;
-    },
-    
-    // 发送控制指令到下位机
+    // 发送控制指令到下位机（设置目标温湿度）
     sendControlToDevice(temp, humidity) {
-      // 在实际应用中，这里会调用蓝牙发送功能
-      console.log(`发送温湿度设置到ESP32: 温度=${temp}°C, 湿度=${humidity}%`);
-      
-      // 触发全局事件（实际应用中通过eventBus或Vuex）
-      this.$emit('control-device', { temp, humidity });
+      // 发送设置命令到ESP32
+      uni.$emit('ble-command', { 
+        type: 'set_target', 
+        temp, 
+        humidity 
+      });
       
       // 提示用户
       uni.showToast({
         title: '已发送环境设置到下位机',
+        icon: 'success'
+      });
+    },
+    
+    // 发送控制命令（启动/停止调节）
+    sendControlCommand(cmdType) {
+      uni.$emit('ble-command', { type: cmdType });
+      
+      // 提示用户
+      uni.showToast({
+        title: `已发送${cmdType === 'start' ? '启动' : '停止'}调节命令`,
         icon: 'success'
       });
     }
@@ -525,6 +551,10 @@ export default {
 .status-adjusting {
   color: #ffc107; /* 黄色表示调节中 */
   animation: pulse 1.5s infinite;
+}
+
+.status-disconnected {
+  color: #dc3545; /* 红色表示断开连接 */
 }
 
 @keyframes pulse {

@@ -10,18 +10,18 @@ if(NOT EXISTS "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader/subproject")
   file(MAKE_DIRECTORY "E:/CodeTool/esp/v5.2.5/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "E:/MyProject/ESP32/led/build/bootloader"
-  "E:/MyProject/ESP32/led/build/bootloader-prefix"
-  "E:/MyProject/ESP32/led/build/bootloader-prefix/tmp"
-  "E:/MyProject/ESP32/led/build/bootloader-prefix/src/bootloader-stamp"
-  "E:/MyProject/ESP32/led/build/bootloader-prefix/src"
-  "E:/MyProject/ESP32/led/build/bootloader-prefix/src/bootloader-stamp"
+  "E:/MyProject/UniProject_agent/led/build/bootloader"
+  "E:/MyProject/UniProject_agent/led/build/bootloader-prefix"
+  "E:/MyProject/UniProject_agent/led/build/bootloader-prefix/tmp"
+  "E:/MyProject/UniProject_agent/led/build/bootloader-prefix/src/bootloader-stamp"
+  "E:/MyProject/UniProject_agent/led/build/bootloader-prefix/src"
+  "E:/MyProject/UniProject_agent/led/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "E:/MyProject/ESP32/led/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "E:/MyProject/UniProject_agent/led/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "E:/MyProject/ESP32/led/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "E:/MyProject/UniProject_agent/led/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

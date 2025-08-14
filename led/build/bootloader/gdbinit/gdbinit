@@ -1,2 +1,2 @@
-source E:/MyProject/ESP32/led/build/bootloader/gdbinit/symbols
-source E:/MyProject/ESP32/led/build/bootloader/gdbinit/connect
+source E:/MyProject/UniProject_agent/led/build/bootloader/gdbinit/symbols
+source E:/MyProject/UniProject_agent/led/build/bootloader/gdbinit/connect
