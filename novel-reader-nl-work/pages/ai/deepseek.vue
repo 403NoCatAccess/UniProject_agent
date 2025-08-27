@@ -322,7 +322,7 @@ export default {
     },
     
     // 加载聊天历史记录
-    load极光ChatHistory() {
+    loadChatHistory() {
       uni.getStorage({
         key: 'chatHistory',
         success: (res) => {

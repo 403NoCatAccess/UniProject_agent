@@ -7,7 +7,7 @@
         <text class="privacy-desc">使用蓝牙功能需要您同意隐私协议，我们承诺仅用于设备连接服务</text>
         <view class="privacy-buttons">
           <button @tap="handleDisagreePrivacy" class="privacy-btn cancel">拒绝</button>
-          <button @tap="handleAgreePrivacy" class="privacy-btn confirm">同意</button>
+          <button open-type="agreePrivacyAuthorization" @agreeprivacyauthorization="handleAgreePrivacy" class="privacy-btn confirm">同意</button>
         </view>
       </view>
     </view>
@@ -21,9 +21,9 @@
     </view>
     
     <view class="control-panel">
-      <button @tap="initBlue" :disabled="scanning">初始化蓝牙</button>
-      <button @tap="startScan" :disabled="!bluetoothInitialized || scanning">搜索设备</button>
-      <button @tap="stopScan" :disabled="!scanning">停止搜索</button>
+      <button @tap="initBlue" :disabled="scanning || connectedDevice">初始化蓝牙</button>
+      <button @tap="startScan" :disabled="!bluetoothInitialized || scanning || connectedDevice">搜索设备</button>
+      <button @tap="stopScan" :disabled="!scanning || connectedDevice">停止搜索</button>
       <button @tap="disconnectDevice" :disabled="!connectedDevice">断开连接</button>
     </view>
 
@@ -121,13 +121,36 @@ export default {
     };
   },
   mounted() {
+    console.log('页面挂载');
     // 监听来自deepseek.vue的命令
     uni.$on('ble-command', this.handleBleCommand);
     
-    // 尝试恢复蓝牙状态
+    // 注册蓝牙连接状态监听
+    this.setupBLEConnectionListener();
+    
+    // 尝试恢复蓝牙状态  页面刷新  蓝牙连接仍然保持，但是变量被清除
     this.restoreBluetoothState();
   },
+  onShow() {
+    console.log('页面显示');
+    // 重置扫描状态
+    this.scanning = false;
+    // 清空设备列表
+    this.devices = [];
+    
+    // 重新注册蓝牙连接状态监听
+    this.setupBLEConnectionListener();//页面隐藏，蓝牙监听会取消
+    
+    // 检查蓝牙适配器状态
+    this.checkBluetoothAdapterState();
+  },
+  onHide() {
+    console.log('页面隐藏');
+    // 停止扫描
+    this.stopScan();
+  },
   onUnload() {
+    console.log('页面卸载');
     // 保存蓝牙状态
     this.saveBluetoothState();
     
@@ -136,27 +159,61 @@ export default {
     uni.offBluetoothAdapterStateChange();
     uni.offBluetoothDeviceFound();
     uni.offBLECharacteristicValueChange();
+    uni.offBLEConnectionStateChange();
   },
   methods: {
+    // 设置蓝牙连接状态监听
+    setupBLEConnectionListener() {
+      // 先移除旧的监听器
+      uni.offBLEConnectionStateChange();
+      
+      // 注册新的连接状态监听
+      uni.onBLEConnectionStateChange((res) => {
+        console.log('蓝牙连接状态变化:', res);
+        if (!res.connected) {
+          console.log('设备连接已断开');
+          this.clearSavedState();
+          
+          // 通知其他组件蓝牙断开
+          uni.$emit('bluetooth-status', { connected: false });
+          
+          uni.showToast({
+            title: '设备连接已断开',
+            icon: 'none'
+          });
+        }
+      });
+    },
+    
+    // 检查蓝牙适配器状态
+    checkBluetoothAdapterState() {
+      uni.getBluetoothAdapterState({
+        success: (res) => {
+          if (res.available) {
+            this.bluetoothInitialized = true;
+            this.statusMessage = '蓝牙已就绪，请搜索设备';
+          } else {
+            this.bluetoothInitialized = false;
+            this.statusMessage = '蓝牙未初始化';
+          }
+        },
+        fail: (err) => {
+          console.error('获取蓝牙适配器状态失败:', err);
+          this.bluetoothInitialized = false;
+          this.statusMessage = '获取蓝牙状态失败';
+        }
+      });
+    },
+    
     // 恢复蓝牙状态
     restoreBluetoothState() {
+      console.log('恢复蓝牙状态');
+      // 重置设备列表
+      this.devices = [];
+      
       // 尝试从本地存储恢复状态
       const savedState = uni.getStorageSync('bluetoothState');
-      if (savedState) {
-        this.connectedDevice = savedState.connectedDevice;
-        this.deviceId = savedState.deviceId;
-        this.serviceId = savedState.serviceId;
-        this.ledCharacteristicId = savedState.ledCharacteristicId;
-        this.sensorData = savedState.sensorData;
-        
-        if (this.connectedDevice) {
-          this.statusMessage = `已连接: ${this.connectedDevice.name || '未知设备'}`;
-          
-          // 通知其他组件蓝牙已连接
-          uni.$emit('bluetooth-status', { connected: true });
-          return;
-        }
-      }
+      console.log('保存的状态:', savedState);
       
       // 检查蓝牙适配器状态
       uni.getBluetoothAdapterState({
@@ -168,7 +225,35 @@ export default {
             // 检查是否有已连接的设备
             uni.getConnectedBluetoothDevices({
               success: (res) => {
-                if (res.devices.length > 0) {
+                console.log('已连接的设备列表:', res.devices);
+                
+                if (savedState && savedState.deviceId) {
+                  // 检查保存的设备是否仍然连接
+                  const isStillConnected = res.devices.some(
+                    device => device.deviceId === savedState.deviceId
+                  );
+                  
+                  if (isStillConnected) {
+                    // 设备仍然连接，恢复状态
+                    this.connectedDevice = savedState.connectedDevice;
+                    this.deviceId = savedState.deviceId;
+                    this.serviceId = savedState.serviceId;
+                    this.ledCharacteristicId = savedState.ledCharacteristicId;
+                    this.sensorData = savedState.sensorData;
+                    this.statusMessage = `已连接: ${savedState.connectedDevice.name || '未知设备'}`;
+                    
+                    // 重新获取服务
+                    this.getBLEDeviceServices(savedState.deviceId);
+                    
+                    // 通知其他组件蓝牙已连接
+                    uni.$emit('bluetooth-status', { connected: true });
+                  } else {
+                    console.log('设备未连接，清除保存的状态');
+                    // 设备未连接，清除保存的状态
+                    this.clearSavedState();
+                  }
+                } else if (res.devices.length > 0) {
+                  // 没有保存状态但有已连接设备
                   const device = res.devices[0];
                   this.connectedDevice = device;
                   this.deviceId = device.deviceId;
@@ -185,23 +270,49 @@ export default {
                 console.error('获取已连接设备失败:', error);
               }
             });
+          } else {
+            // 蓝牙适配器不可用
+            this.bluetoothInitialized = false;
+            this.statusMessage = '蓝牙未初始化';
           }
         },
         fail: (error) => {
           console.error('获取蓝牙适配器状态失败:', error);
+          this.bluetoothInitialized = false;
+          this.statusMessage = '获取蓝牙状态失败';
         }
       });
     },
     
+    // 清除保存的状态
+    clearSavedState() {
+      console.log('清除保存的蓝牙状态');
+      this.connectedDevice = null;
+      this.deviceId = '';
+      this.serviceId = '';
+      this.ledCharacteristicId = '';
+      this.sensorData = { temp: null, humidity: null };
+      this.receivedData = [];
+      this.lastUpdateTime = null;
+      this.devices = [];
+      uni.removeStorageSync('bluetoothState');
+      this.statusMessage = '蓝牙已就绪，请搜索设备';
+      
+      // 通知其他组件蓝牙断开
+      uni.$emit('bluetooth-status', { connected: false });
+    },
+    
     // 保存蓝牙状态
     saveBluetoothState() {
-      uni.setStorageSync('bluetoothState', {
-        connectedDevice: this.connectedDevice,
-        deviceId: this.deviceId,
-        serviceId: this.serviceId,
-        ledCharacteristicId: this.ledCharacteristicId,
-        sensorData: this.sensorData
-      });
+      if (this.connectedDevice) {
+        uni.setStorageSync('bluetoothState', {
+          connectedDevice: this.connectedDevice,
+          deviceId: this.deviceId,
+          serviceId: this.serviceId,
+          ledCharacteristicId: this.ledCharacteristicId,
+          sensorData: this.sensorData
+        });
+      }
     },
     
     // 处理来自deepseek.vue的命令
@@ -278,6 +389,15 @@ export default {
     
     // 初始化蓝牙适配器
     initBlue() {
+      // 如果已经初始化，直接返回
+      if (this.bluetoothInitialized) {
+        uni.showToast({
+          title: '蓝牙已初始化',
+          icon: 'none'
+        });
+        return;
+      }
+      
       uni.showLoading({ title: '初始化中...' });
       
       uni.openBluetoothAdapter({
@@ -301,9 +421,12 @@ export default {
               uni.$emit('bluetooth-status', { connected: false });
               
               // 清除保存的状态
-              uni.removeStorageSync('bluetoothState');
+              this.clearSavedState();
             }
           });
+          
+          // 重新注册蓝牙连接状态监听
+          this.setupBLEConnectionListener();
         },
         fail: (err) => {
           console.error('蓝牙初始化失败', err);
@@ -331,30 +454,52 @@ export default {
         return;
       }
       
+      // 确保停止之前的扫描
+      this.stopScan();
+      
+      // 重置设备列表
+      this.devices = [];
+      
       this.scanning = true;
       this.statusMessage = '正在搜索设备...';
-      this.devices = [];
       uni.showLoading({ title: '搜索中...' });
+      
+      // 设置扫描超时
+      const scanTimeout = setTimeout(() => {
+        if (this.scanning) {
+          console.log('扫描超时');
+          this.stopScan();
+          uni.showToast({
+            title: '扫描超时，请重试',
+            icon: 'none'
+          });
+        }
+      }, 30000); // 30秒超时
       
       // 开始搜索设备
       uni.startBluetoothDevicesDiscovery({
-        allowDuplicatesKey: false,
+        allowDuplicatesKey: true, // 关键修改：允许重复上报设备
         services: [ENVIRONMENTAL_SENSING_SERVICE],
         success: (res) => {
+          clearTimeout(scanTimeout);
           console.log('开始搜索蓝牙设备', res);
           uni.hideLoading();
+          
+          // 移除旧的监听器（避免重复监听）
+          uni.offBluetoothDeviceFound();
           
           // 监听发现新设备
           uni.onBluetoothDeviceFound((res) => {
             res.devices.forEach(device => {
               // 过滤掉没有名称的设备（可能是非BLE设备）
-              if (device.name && !this.devices.some(d => d.deviceId === device.deviceId)) {
+              if (device.name && !this.devices.some(d => d.name === device.name)) {
                 this.devices.push(device);
               }
             });
           });
         },
         fail: (err) => {
+          clearTimeout(scanTimeout);
           console.error('搜索失败', err);
           this.scanning = false;
           this.statusMessage = '搜索失败';
@@ -369,15 +514,22 @@ export default {
     
     // 停止扫描
     stopScan() {
+      if (!this.scanning) return;
+      
       uni.stopBluetoothDevicesDiscovery({
         success: () => {
+          console.log('停止扫描成功');
           this.scanning = false;
           this.statusMessage = this.devices.length > 0 
             ? '搜索完成，请选择设备连接' 
             : '未发现设备，请重试';
+          // 移除设备发现监听
+          uni.offBluetoothDeviceFound();
         },
         fail: (err) => {
           console.error('停止搜索失败', err);
+          // 即使停止失败，也重置扫描状态
+          this.scanning = false;
         }
       });
     },
@@ -396,25 +548,44 @@ export default {
       this.statusMessage = `正在连接 ${device.name || '未知设备'}...`;
       uni.showLoading({ title: '连接中...' });
       
-      // 停止扫描以节省资源
-      this.stopScan();
+      // 设置连接超时
+      const timeoutId = setTimeout(() => {
+        if (this.connecting) {
+          console.log('连接超时');
+          this.connecting = false;
+          uni.hideLoading();
+          uni.showToast({
+            title: '连接超时，请重试',
+            icon: 'none'
+          });
+          this.clearSavedState();
+        }
+      }, 15000); // 15秒超时
       
       // 连接设备
       uni.createBLEConnection({
         deviceId: device.deviceId,
         timeout: 10000, // 10秒超时
         success: (res) => {
+          clearTimeout(timeoutId);
           console.log('设备连接成功', res);
           this.deviceId = device.deviceId;
           this.connectedDevice = device;
+          
+          // 关键修复：连接成功后清空设备列表
+          this.devices = [];
           
           // 获取设备服务
           this.getBLEDeviceServices(device.deviceId);
           
           // 保存状态
           this.saveBluetoothState();
+          
+          // 重新注册蓝牙连接状态监听
+          this.setupBLEConnectionListener();
         },
         fail: (err) => {
+          clearTimeout(timeoutId);
           console.error('设备连接失败', err);
           this.connecting = false;
           this.statusMessage = '连接失败';
@@ -423,6 +594,9 @@ export default {
             title: '连接失败，请重试',
             icon: 'none'
           });
+          
+          // 清除可能存在的无效状态
+          this.clearSavedState();
         }
       });
     },
@@ -610,44 +784,43 @@ export default {
       }
     },
     
-
-// 修改 sendCommand 方法
-sendCommand(command) {
-  if (!this.deviceId || !this.serviceId || !this.ledCharacteristicId) {
-    console.error('未连接设备或缺少特征值，无法发送命令');
-    return;
-  }
-  
-  // 将命令转换为ArrayBuffer（小程序兼容方式）
-  const commandData = this.stringToArrayBuffer(command);
-  
-  uni.writeBLECharacteristicValue({
-    deviceId: this.deviceId,
-    serviceId: this.serviceId,
-    characteristicId: this.ledCharacteristicId,
-    value: commandData,
-    success: () => {
-      console.log('命令发送成功:', command);
-    },
-    fail: (err) => {
-      console.error('命令发送失败:', err);
-      uni.showToast({
-        title: '命令发送失败',
-        icon: 'none'
+    // 发送命令
+    sendCommand(command) {
+      if (!this.deviceId || !this.serviceId || !this.ledCharacteristicId) {
+        console.error('未连接设备或缺少特征值，无法发送命令');
+        return;
+      }
+      
+      // 将命令转换为ArrayBuffer（小程序兼容方式）
+      const commandData = this.stringToArrayBuffer(command);
+      
+      uni.writeBLECharacteristicValue({
+        deviceId: this.deviceId,
+        serviceId: this.serviceId,
+        characteristicId: this.ledCharacteristicId,
+        value: commandData,
+        success: () => {
+          console.log('命令发送成功:', command);
+        },
+        fail: (err) => {
+          console.error('命令发送失败:', err);
+          uni.showToast({
+            title: '命令发送失败',
+            icon: 'none'
+          });
+        }
       });
-    }
-  });
-},
-
-// 添加字符串转ArrayBuffer的方法（小程序兼容）
-stringToArrayBuffer(str) {
-  const buf = new ArrayBuffer(str.length);
-  const bufView = new Uint8Array(buf);
-  for (let i = 0; i < str.length; i++) {
-    bufView[i] = str.charCodeAt(i);
-  }
-  return buf;
-},
+    },
+    
+    // 添加字符串转ArrayBuffer的方法（小程序兼容）
+    stringToArrayBuffer(str) {
+      const buf = new ArrayBuffer(str.length);
+      const bufView = new Uint8Array(buf);
+      for (let i = 0; i < str.length; i++) {
+        bufView[i] = str.charCodeAt(i);
+      }
+      return buf;
+    },
     
     // 断开设备连接
     disconnectDevice() {
@@ -660,28 +833,16 @@ stringToArrayBuffer(str) {
         deviceId: this.deviceId,
         success: () => {
           console.log('设备连接已断开');
-          this.connectedDevice = null;
-          this.deviceId = '';
-          this.statusMessage = '连接已断开';
-          this.receivedData = [];
-          // 清空传感器数据
-          this.sensorData = {
-            temp: null,
-            humidity: null
-          };
+          this.clearSavedState();
           uni.hideLoading();
-          
-          // 通知其他组件蓝牙断开
-          uni.$emit('bluetooth-status', { connected: false });
-          
-          // 清除保存的状态
-          uni.removeStorageSync('bluetoothState');
         },
         fail: (err) => {
           console.error('断开连接失败', err);
+          // 即使断开失败，也清除状态（设备可能已关机）
+          this.clearSavedState();
           uni.hideLoading();
           uni.showToast({
-            title: '断开连接失败',
+            title: '断开连接失败，设备可能已关机',
             icon: 'none'
           });
         },

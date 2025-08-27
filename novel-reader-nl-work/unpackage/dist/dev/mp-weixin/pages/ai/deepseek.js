@@ -204,7 +204,7 @@ const _sfc_main = {
       this.scrollTop = Math.random() * 1e4;
     },
     // 加载聊天历史记录
-    load极光ChatHistory() {
+    loadChatHistory() {
       common_vendor.index.getStorage({
         key: "chatHistory",
         success: (res) => {

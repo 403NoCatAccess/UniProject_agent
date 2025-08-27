@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "led",
-    "project_version":    "928773a-dirty",
+    "project_version":    "1984543-dirty",
     "project_path":       "E:/MyProject/UniProject_agent/led",
     "idf_path":           "E:/CodeTool/esp/v5.2.5/esp-idf",
     "build_dir":          "E:/MyProject/UniProject_agent/led/build",

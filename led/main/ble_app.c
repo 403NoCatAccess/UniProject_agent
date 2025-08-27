@@ -194,20 +194,21 @@ static esp_ble_adv_data_t adv_data = {
 };
 //扫描回复数据，用于主机在主动扫描时，向设备发起扫描请求，设备需要回复的内容
 static esp_ble_adv_data_t scan_rsp_data = {
-    .set_scan_rsp = true,
-    .include_name = true,
-    .include_txpower = true,
-    //.min_interval = 0x0006,
-    //.max_interval = 0x0010,
-    .appearance = 0x00,
-    .manufacturer_len = 0, //TEST_MANUFACTURER_DATA_LEN,
-    .p_manufacturer_data =  NULL, //&test_manufacturer[0],
-    .service_data_len = 0,
-    .p_service_data = NULL,
-    .service_uuid_len = sizeof(adv_service_uuid128),
-    .p_service_uuid = adv_service_uuid128,
-    .flag = (ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_BREDR_NOT_SPT),
+    .set_scan_rsp = true,               // 设置此数据为扫描响应包
+    .include_name = true,               // 扫描响应数据包中包含设备名称
+    .include_txpower = true,            // 包含发射功率
+    //.min_interval = 0x0006,            // 注释掉了，若设置，最小连接间隔为 7.5ms（1.25ms为单位）
+    //.max_interval = 0x0010,            // 注释掉了，若设置，最大连接间隔为 20ms（1.25ms为单位）
+    .appearance = 0x00,                 // 外观类型，0x00表示没有指定外观类型
+    .manufacturer_len = 0,              // 厂商数据长度，0表示没有厂商信息
+    .p_manufacturer_data =  NULL,       // 厂商数据内容，NULL表示没有厂商数据
+    .service_data_len = 0,              // 服务数据长度，0表示没有服务数据
+    .p_service_data = NULL,             // 服务数据内容，NULL表示没有服务数据
+    .service_uuid_len = sizeof(adv_service_uuid128),  // 服务UUID的长度，这里使用128位UUID
+    .p_service_uuid = adv_service_uuid128,  // 指向存储服务UUID的数组（adv_service_uuid128）
+    .flag = (ESP_BLE_ADV_FLAG_GEN_DISC | ESP_BLE_ADV_FLAG_BREDR_NOT_SPT), // 广播标志，表示是通用发现模式并且不支持经典蓝牙（BR/EDR）
 };
+
 
 /**
  * gatt事件回调函数

@@ -3,6 +3,11 @@
   "idf.portWin": "COM5",
   "files.associations": {
     "esp_system.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "task.h": "c",
+    "gpio.h": "c",
+    "string.h": "c",
+    "esp_log.h": "c",
+    "freertos.h": "c"
   }
 }
