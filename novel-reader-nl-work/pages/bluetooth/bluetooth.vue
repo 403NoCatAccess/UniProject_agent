@@ -128,7 +128,7 @@ export default {
     // 注册蓝牙连接状态监听
     this.setupBLEConnectionListener();
     
-    // 尝试恢复蓝牙状态  页面刷新  蓝牙连接仍然保持，但是变量被清除
+    // 尝试恢复蓝牙状态    退回到主页变量会被取消
     this.restoreBluetoothState();
   },
   onShow() {
@@ -139,7 +139,7 @@ export default {
     this.devices = [];
     
     // 重新注册蓝牙连接状态监听
-    this.setupBLEConnectionListener();//页面隐藏，蓝牙监听会取消
+    this.setupBLEConnectionListener();//页面隐藏，蓝牙监听不会取消，所以这段代码没必要  为了保险加上的
     
     // 检查蓝牙适配器状态
     this.checkBluetoothAdapterState();
@@ -536,6 +536,7 @@ export default {
     
     // 连接设备
     connectDevice(device) {
+		this.stopScan();
       if (!device.deviceId) {
         uni.showToast({
           title: '设备信息不完整',
@@ -604,7 +605,7 @@ export default {
     // 获取蓝牙设备的服务
     getBLEDeviceServices(deviceId) {
       uni.getBLEDeviceServices({
-        deviceId,
+        deviceId,//属性名和变量名相同，省略键值对
         success: (res) => {
           console.log('获取设备服务成功', res.services);
           if (res.services.length === 0) {
@@ -772,7 +773,7 @@ export default {
     
     // 添加日志
     addLog(content) {
-      this.receivedData.unshift({
+      this.receivedData.unshift({//数组开头添加
         time: new Date(),
         content,
         type: 'sensor'

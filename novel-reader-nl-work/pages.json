@@ -41,7 +41,8 @@
 			"path" : "pages/bluetooth/bluetooth",
 			"style" : 
 			{
-				"navigationBarTitleText" : ""
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh": true 
 			}
 		}
 	],

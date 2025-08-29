@@ -357,6 +357,7 @@ const _sfc_main = {
     },
     // 连接设备
     connectDevice(device) {
+      this.stopScan();
       if (!device.deviceId) {
         common_vendor.index.showToast({
           title: "设备信息不完整",
@@ -411,6 +412,7 @@ const _sfc_main = {
     getBLEDeviceServices(deviceId) {
       common_vendor.index.getBLEDeviceServices({
         deviceId,
+        //属性名和变量名相同，省略键值对
         success: (res) => {
           console.log("获取设备服务成功", res.services);
           if (res.services.length === 0) {
@@ -535,6 +537,7 @@ const _sfc_main = {
     // 添加日志
     addLog(content) {
       this.receivedData.unshift({
+        //数组开头添加
         time: /* @__PURE__ */ new Date(),
         content,
         type: "sensor"

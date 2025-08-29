@@ -424,7 +424,7 @@ export default {
         switch(command.command) {
           case 'set_target':
             const [temp, humidity] = command.params.split(',');
-            this.setTargetEnvironment(parseFloat(temp), parseFloat(humidity));
+            this.setTargetEnvironment(parseFloat(temp), parseFloat(humidity));//将字符串转为浮点数
             // 发送设置命令到ESP32
             this.sendControlToDevice(parseFloat(temp), parseFloat(humidity));
             break;
